@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import VoiceAssistant from './VoiceAssistant';
 import { 
   PlusIcon, 
   MagnifyingGlassIcon, 
@@ -770,6 +771,12 @@ const Tasks = () => {
           }}
         />
       )}
+       
+    {/* ...your existing UI... */}
+    <div style={{ position: 'fixed', bottom: 34, right: 12, zIndex: 1000 }}>
+      <VoiceAssistant />
+    </div>
+
     </div>
   );
 };
