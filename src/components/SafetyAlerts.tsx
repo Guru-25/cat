@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   getOperators, 
   getMachines, 
@@ -57,6 +57,24 @@ const SafetyAlerts: React.FC = () => {
   const [operators, setOperators] = useState<Operator[]>([]);
   const [machines, setMachines] = useState<Machine[]>([]);
   const [monitoringActive, setMonitoringActive] = useState(false);
+  const [audioEnabled, setAudioEnabled] = useState(true);
+  const [activeAlertConditions, setActiveAlertConditions] = useState<Set<string>>(new Set());
+  
+  // Audio ref to control playback
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  
+  // Initialize audio
+  useEffect(() => {
+    audioRef.current = new Audio('/alarm.mp3');
+    audioRef.current.preload = 'auto';
+    
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
 
   useEffect(() => {
     setOperators(getOperators());
@@ -73,10 +91,69 @@ const SafetyAlerts: React.FC = () => {
     }
   }, [monitoringActive, operators, machines]);
 
+  // Audio playback function
+  const playAlarmSound = (severity: string, alertType: string) => {
+    if (!audioEnabled || !audioRef.current) return;
+
+    try {
+      // Reset audio to beginning
+      audioRef.current.currentTime = 0;
+      
+      // Adjust volume based on severity
+      switch (severity) {
+        case 'CRITICAL':
+          audioRef.current.volume = 1.0;
+          // Play alarm 3 times for critical alerts
+          audioRef.current.play();
+          setTimeout(() => {
+            if (audioRef.current) {
+              audioRef.current.currentTime = 0;
+              audioRef.current.play();
+            }
+          }, 1500);
+          setTimeout(() => {
+            if (audioRef.current) {
+              audioRef.current.currentTime = 0;
+              audioRef.current.play();
+            }
+          }, 3000);
+          break;
+        case 'HIGH':
+          audioRef.current.volume = 0.8;
+          // Play alarm 2 times for high alerts
+          audioRef.current.play();
+          setTimeout(() => {
+            if (audioRef.current) {
+              audioRef.current.currentTime = 0;
+              audioRef.current.play();
+            }
+          }, 1500);
+          break;
+        case 'MEDIUM':
+          audioRef.current.volume = 0.6;
+          audioRef.current.play();
+          break;
+        case 'LOW':
+          audioRef.current.volume = 0.4;
+          audioRef.current.play();
+          break;
+        default:
+          audioRef.current.volume = 0.5;
+          audioRef.current.play();
+      }
+      
+      console.log(`🔊 Safety Alert Audio: ${severity} ${alertType} alert triggered`);
+    } catch (error) {
+      console.error('Failed to play alarm sound:', error);
+    }
+  };
+
   const checkSafetyAlerts = () => {
     const newAlerts: SafetyAlert[] = [];
+    const currentConditions = new Set<string>();
     const currentOperators = getOperators();
     const currentMachines = getMachines();
+    const newAudioAlerts: SafetyAlert[] = [];
 
     // Check proximity to active machines
     currentOperators.forEach(operator => {
@@ -98,8 +175,12 @@ const SafetyAlerts: React.FC = () => {
             if (distance < safetyRadius) {
               const severity = distance < safetyRadius * 0.5 ? 'CRITICAL' : 'HIGH';
               
-              newAlerts.push({
-                id: `proximity-${operator.id}-${machine.id}-${Date.now()}`,
+              // Create a unique condition identifier (without timestamp)
+              const conditionId = `proximity-${operator.id}-${machine.id}`;
+              currentConditions.add(conditionId);
+              
+              const alert: SafetyAlert = {
+                id: `${conditionId}-${Date.now()}`,
                 type: 'proximity',
                 severity,
                 operator: operator.name,
@@ -109,7 +190,14 @@ const SafetyAlerts: React.FC = () => {
                 message: `${operator.name} too close to ${machine.model} (${Math.round(distance)}m, ${safetyRadius}m required)`,
                 timestamp: new Date().toLocaleTimeString(),
                 coordinates: operator.currentLocation
-              });
+              };
+              
+              newAlerts.push(alert);
+              
+              // If this is a NEW condition (not previously active), add to audio alerts
+              if (!activeAlertConditions.has(conditionId)) {
+                newAudioAlerts.push(alert);
+              }
             }
           }
         });
@@ -122,27 +210,83 @@ const SafetyAlerts: React.FC = () => {
           );
 
           if (distance < zone.radius) {
-            newAlerts.push({
-              id: `hazard-${operator.id}-${zone.name}-${Date.now()}`,
+            // Create a unique condition identifier (without timestamp)
+            const conditionId = `hazard-${operator.id}-${zone.name}`;
+            currentConditions.add(conditionId);
+            
+            const alert: SafetyAlert = {
+              id: `${conditionId}-${Date.now()}`,
               type: 'hazard_zone',
               severity: zone.severity,
               operator: operator.name,
               message: `${operator.name} entered ${zone.name} (${zone.description})`,
               timestamp: new Date().toLocaleTimeString(),
               coordinates: operator.currentLocation
-            });
+            };
+            
+            newAlerts.push(alert);
+            
+            // If this is a NEW condition (not previously active), add to audio alerts
+            if (!activeAlertConditions.has(conditionId)) {
+              newAudioAlerts.push(alert);
+            }
           }
         });
       }
     });
 
-    // Only update if there are new alerts
+    // Update active conditions
+    setActiveAlertConditions(currentConditions);
+
+    // Play audio only for NEW alert conditions
+    if (newAudioAlerts.length > 0) {
+      // Play alarm for the highest severity new alert
+      const highestSeverityAlert = newAudioAlerts.reduce((prev, current) => {
+        const severityOrder = { 'LOW': 1, 'MEDIUM': 2, 'HIGH': 3, 'CRITICAL': 4 };
+        return severityOrder[current.severity as keyof typeof severityOrder] > 
+               severityOrder[prev.severity as keyof typeof severityOrder] ? current : prev;
+      });
+      
+      playAlarmSound(highestSeverityAlert.severity, highestSeverityAlert.type);
+      
+      // Log the alert trigger
+      console.log(`🚨 NEW SAFETY ALERT: ${highestSeverityAlert.severity} - ${highestSeverityAlert.message}`);
+    }
+
+    // Log resolved conditions
+    const resolvedConditions = Array.from(activeAlertConditions).filter(
+      condition => !currentConditions.has(condition)
+    );
+    if (resolvedConditions.length > 0) {
+      console.log(`✅ SAFETY ALERT RESOLVED: ${resolvedConditions.length} condition(s) cleared`);
+    }
+
+    // Update alerts display (keep recent alerts for reference)
     if (newAlerts.length > 0) {
       setAlerts(prev => [...newAlerts, ...prev].slice(0, 10)); // Keep last 10 alerts
+    } else if (alerts.length > 0 && currentConditions.size === 0) {
+      // Clear old alerts if no active conditions
+      setAlerts([]);
     }
   };
 
   const dismissAlert = (alertId: string) => {
+    // Find the alert being dismissed to extract its condition ID
+    const alertBeingDismissed = alerts.find(alert => alert.id === alertId);
+    if (alertBeingDismissed) {
+      // Extract condition ID from alert ID (remove timestamp part)
+      const conditionId = alertId.replace(/-\d+$/, '');
+      
+      // Remove from active conditions so new alerts can trigger for this condition
+      setActiveAlertConditions(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(conditionId);
+        return newSet;
+      });
+      
+      console.log(`👤 Alert manually dismissed: ${conditionId}`);
+    }
+    
     setAlerts(prev => prev.filter(alert => alert.id !== alertId));
   };
 
@@ -268,8 +412,30 @@ Alert automatically cleared.`);
           <span className={`text-sm ${monitoringActive ? 'text-green-600' : 'text-gray-500'}`}>
             {monitoringActive ? '🟢 Monitoring Active' : '🔴 Monitoring Off'}
           </span>
+          
+          {/* Audio Control */}
           <button
-            onClick={() => setMonitoringActive(!monitoringActive)}
+            onClick={() => setAudioEnabled(!audioEnabled)}
+            className={`px-2 py-1 rounded-md text-sm font-medium ${
+              audioEnabled 
+                ? 'bg-blue-100 text-blue-700 hover:bg-blue-200' 
+                : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+            }`}
+            title={audioEnabled ? 'Disable audio alerts' : 'Enable audio alerts'}
+          >
+            {audioEnabled ? '🔊' : '🔇'}
+          </button>
+          
+          <button
+            onClick={() => {
+              const newState = !monitoringActive;
+              setMonitoringActive(newState);
+              if (!newState) {
+                // Clear active conditions when stopping monitoring
+                setActiveAlertConditions(new Set());
+                console.log('🛑 Monitoring stopped - alert conditions cleared');
+              }
+            }}
             className={`px-3 py-1 rounded-md text-sm font-medium ${
               monitoringActive 
                 ? 'bg-red-100 text-red-700 hover:bg-red-200' 
@@ -283,7 +449,19 @@ Alert automatically cleared.`);
 
       {/* Safety Configuration Display */}
       <div className="mb-4 p-3 bg-gray-50 rounded-lg">
-        <h4 className="text-sm font-medium text-gray-700 mb-2">Active Safety Zones</h4>
+        <div className="flex items-center justify-between mb-2">
+          <h4 className="text-sm font-medium text-gray-700">Active Safety Zones</h4>
+          <div className="flex items-center space-x-2 text-xs">
+            <span className={`px-2 py-1 rounded ${
+              audioEnabled ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'
+            }`}>
+              {audioEnabled ? '🔊 Audio Alerts ON' : '🔇 Audio Alerts OFF'}
+            </span>
+            <span className="text-gray-500">
+              Check interval: 2s
+            </span>
+          </div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
           <div>
             <div className="font-medium">Machine Safety Radii:</div>
@@ -305,6 +483,24 @@ Alert automatically cleared.`);
             </ul>
           </div>
         </div>
+        
+                 {/* Audio Alert Patterns */}
+         {audioEnabled && (
+           <div className="mt-2 pt-2 border-t border-gray-200">
+             <div className="flex items-center justify-between">
+               <div className="text-xs text-gray-600">
+                 <span className="font-medium">🔊 Audio Alert Patterns:</span>
+                 <span className="ml-2">🚨 Critical: 3x alarms | ⚠️ High: 2x alarms | ⚡ Medium/Low: 1x alarm</span>
+               </div>
+               <button
+                 onClick={() => playAlarmSound('HIGH', 'test')}
+                 className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded hover:bg-blue-200"
+               >
+                 🔊 Test Audio
+               </button>
+             </div>
+           </div>
+         )}
       </div>
 
       {/* Active Alerts */}
@@ -403,7 +599,11 @@ Alert automatically cleared.`);
             </div>
             <div className="space-x-2">
               <button
-                onClick={() => setAlerts([])}
+                onClick={() => {
+                  setAlerts([]);
+                  setActiveAlertConditions(new Set());
+                  console.log('🧹 All alerts cleared manually');
+                }}
                 className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200"
               >
                 Clear All
