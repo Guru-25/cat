@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { PlayIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import ChatInterface from '../components/ChatInterface';
 
 const ELearning = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [transcriptionStep, setTranscriptionStep] = useState('');
+  const [showChat, setShowChat] = useState(false);
+  const [transcribedText, setTranscribedText] = useState('');
 
   const handleAskAI = async () => {
     console.log('Ask AI clicked - starting transcription process');
@@ -13,7 +16,7 @@ const ELearning = () => {
     try {
       // Step 1: Check if video exists
       setTranscriptionStep('Checking video file...');
-      const videoResponse = await fetch('/api/video-info/training-video.mp4');
+      const videoResponse = await fetch('http://localhost:5000/api/video-info/training-video.mp4');
       const videoInfo = await videoResponse.json();
       
       if (!videoInfo.success) {
@@ -47,11 +50,13 @@ const ELearning = () => {
       
       setTranscriptionStep('Opening chat interface...');
       
-      // TODO: Open chat interface with the transcribed text
+      // Store transcribed text and open chat interface
+      setTranscribedText(result.transcription.text);
+      
       setTimeout(() => {
-        alert(`Transcription completed!\n\nText length: ${result.transcription.text.length} characters\n\nFirst 200 chars: ${result.transcription.text.substring(0, 200)}...`);
         setIsProcessing(false);
         setTranscriptionStep('');
+        setShowChat(true);
       }, 1000);
 
     } catch (error) {
@@ -60,6 +65,10 @@ const ELearning = () => {
       setIsProcessing(false);
       setTranscriptionStep('');
     }
+  };
+
+  const handleCloseChat = () => {
+    setShowChat(false);
   };
 
   return (
@@ -127,6 +136,14 @@ const ELearning = () => {
           </p>
         </div>
       </div>
+
+      {/* Chat Interface Modal */}
+      {showChat && (
+        <ChatInterface
+          transcribedText={transcribedText}
+          onClose={handleCloseChat}
+        />
+      )}
     </div>
   );
 };
