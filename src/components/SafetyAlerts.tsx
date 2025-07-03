@@ -83,6 +83,11 @@ const SafetyAlerts: React.FC = () => {
       if (operator.currentLocation && operator.status === 'active') {
         currentMachines.forEach(machine => {
           if (machine.status === 'active' && machine.locationCoordinates) {
+            // Skip if this is the operator's own machine
+            if (machine.operator === operator.name || operator.currentMachine === machine.model) {
+              return;
+            }
+
             const distance = calculateDistance(
               operator.currentLocation,
               machine.locationCoordinates

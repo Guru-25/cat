@@ -220,7 +220,7 @@ const Machines: React.FC = () => {
               </select>
             </div>
 
-            {/* Simulation Controls */}
+            {/* Simulation Controls
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Location Simulation
@@ -244,7 +244,7 @@ const Machines: React.FC = () => {
                   Distances
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Reset Data */}
             <div>
@@ -257,12 +257,12 @@ const Machines: React.FC = () => {
               >
                 🔄 Reset Data
               </button>
-              <button
+              {/* <button
                 onClick={triggerSafetyDemo}
                 className="w-full bg-red-600 text-white px-2 py-1 rounded-md hover:bg-red-700 text-xs"
               >
                 🚨 Safety Demo
-              </button>
+              </button> */}
             </div>
           </div>
 
