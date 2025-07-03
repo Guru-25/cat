@@ -7,6 +7,7 @@ import Tasks from './pages/Tasks';
 import Operators from './pages/Operators';
 import Machines from './pages/Machines';
 import Safety from './pages/Safety';
+import ELearning from './pages/ELearning';
 import Login from './pages/Login';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                   <Route path="/operators" element={<Operators />} />
                   <Route path="/machines" element={<Machines />} />
                   <Route path="/safety" element={<Safety />} />
+                  <Route path="/elearning" element={<ELearning />} />
                 </Routes>
               </main>
             </div>

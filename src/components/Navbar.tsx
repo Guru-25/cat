@@ -6,7 +6,8 @@ import {
   UserGroupIcon, 
   TruckIcon,
   ShieldExclamationIcon,
-  Cog6ToothIcon
+  Cog6ToothIcon,
+  AcademicCapIcon
 } from '@heroicons/react/24/outline';
 
 const Navbar = () => {
@@ -16,6 +17,7 @@ const Navbar = () => {
     { name: 'Operators', href: '/operators', icon: UserGroupIcon },
     { name: 'Machines', href: '/machines', icon: TruckIcon },
     { name: 'Safety', href: '/safety', icon: ShieldExclamationIcon },
+    { name: 'E-Learning', href: '/elearning', icon: AcademicCapIcon },
   ];
 
   return (
