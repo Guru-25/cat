@@ -1,0 +1,185 @@
+# Smart Operator Assistant for CAT Machinery - Product Requirements Document
+
+## Overview
+A comprehensive web application that serves as an intelligent companion for CAT machine operators, enhancing their daily work experience through task management, safety monitoring, proximity alerts, and AI-powered learning modules. The system connects administrators, operators, and machinery data to optimize operational efficiency and safety.
+
+## Core Features
+
+### 1. Task Management System
+- **Admin Task Assignment**: Administrators can create and assign 5-6 scheduled tasks per operator
+- **Task Dashboard**: Operators view daily scheduled tasks with priorities and estimated completion times
+- **Progress Tracking**: Real-time progress bars for each task with completion logging
+- **Time Estimation**: ML-powered task time prediction based on historical data and machine behavior
+
+### 2. User Authentication & Authorization
+- **Multi-role Login**: Admin and Operator login systems
+- **TOTP Security**: Two-factor authentication to ensure only authorized personnel use machinery
+- **Session Management**: Secure session handling with timeout features
+
+### 3. Location-Based Task Prioritization
+- **GPS Integration**: Track operator and machine coordinates
+- **Proximity-Based Priority**: Automatically assign task priorities based on shortest distance
+- **Real-time Location Updates**: Continuous location monitoring for dynamic task reordering
+
+### 4. Safety & Monitoring Features
+- **Proximity Alerts**: Notify operators when within threshold distance of other machines
+- **Safety Compliance Logging**: Mandatory safety check logging (e.g., seatbelt, proximity hazards)
+- **Incident Reporting**: Digital incident logging system
+- **Hourly Safety Reminders**: Automated alerts for safety measure compliance
+
+### 5. AI-Powered Learning Hub
+- **Tutorial Generation**: LLM-generated training content based on task requirements
+- **E-learning Modules**: Interactive learning experiences for operator skill development
+- **Performance-Based Content**: Adaptive learning based on operator performance data
+
+### 6. Performance & Credit System
+- **Credit Score Tracking**: Performance-based scoring system (+/- credits)
+- **Behavioral Analysis**: Track past behavior patterns and performance metrics
+- **Performance Dashboard**: Visual analytics for operator and admin review
+
+### 7. Machine Behavior Monitoring
+- **Threshold Monitoring**: Track machine usage patterns and identify unusual behavior
+- **Predictive Maintenance Alerts**: Early warning system for potential issues
+- **Usage Analytics**: Comprehensive machine utilization reports
+
+## User Experience
+
+### Operator Interface
+- **Daily Task Dashboard**: Clean, mobile-friendly interface showing assigned tasks
+- **Progress Visualization**: Interactive progress bars and completion status
+- **Quick Safety Logging**: One-tap safety compliance recording
+- **Voice-Enabled Controls**: Hands-free operation for field use
+- **Multi-lingual Support**: Localized interface for global operators
+
+### Admin Interface
+- **Task Management Panel**: Comprehensive task creation and assignment tools
+- **Operator Monitoring**: Real-time view of all operators and their progress
+- **Analytics Dashboard**: Performance metrics and operational insights
+- **Machine Fleet Overview**: Status and location of all machinery
+
+## Technical Architecture
+
+### Frontend
+- **React 18** with TypeScript for type safety
+- **Progressive Web App (PWA)** for offline functionality
+- **Responsive Design** optimized for mobile and tablet use
+- **Real-time Updates** using WebSocket connections
+- **Voice Recognition API** integration
+- **Geolocation API** for proximity features
+
+### Backend
+- **Node.js/Express** REST API
+- **WebSocket Server** for real-time communications
+- **JWT Authentication** with TOTP integration
+- **PostgreSQL Database** for structured data
+- **Redis Cache** for session management and real-time data
+
+### AI/ML Components
+- **Task Time Prediction Model**: Historical data analysis for time estimation
+- **LLM Integration**: OpenAI/Anthropic API for tutorial generation
+- **Behavioral Pattern Analysis**: Custom ML models for performance tracking
+
+### Mobile Features
+- **GPS Integration**: Continuous location tracking
+- **Push Notifications**: Task alerts and safety reminders
+- **Offline Mode**: Critical functionality without internet
+- **Voice Commands**: Hands-free operation
+
+## Development Roadmap
+
+### Phase 1: Core Foundation (MVP)
+- User authentication system with basic admin/operator roles
+- Basic task creation and assignment functionality
+- Simple task dashboard for operators
+- Progress tracking with manual updates
+- Basic admin panel for task management
+
+### Phase 2: Location & Safety Features
+- GPS integration and location tracking
+- Proximity-based task prioritization
+- Safety logging and compliance features
+- Real-time notifications and alerts
+- Machine coordination system
+
+### Phase 3: AI-Powered Features
+- Task time estimation ML model
+- LLM integration for tutorial generation
+- Performance credit system
+- Behavioral analysis dashboard
+- Advanced analytics and reporting
+
+### Phase 4: Advanced Features
+- Voice-enabled controls
+- Multi-lingual support
+- Offline functionality
+- Advanced machine behavior monitoring
+- Predictive maintenance alerts
+
+## Dataset Requirements
+
+### Operator Data
+- operator_id, name, role, current_location, performance_score
+- login_history, safety_compliance_rate, task_completion_rate
+- language_preference, certification_level, experience_years
+
+### Task Data
+- task_id, title, description, estimated_time, actual_time, priority
+- location_coordinates, machine_required, safety_requirements
+- completion_status, assigned_operator, created_by_admin
+
+### Machine Data
+- machine_id, model, current_location, operator_assigned
+- maintenance_schedule, usage_hours, fuel_level, engine_hours
+- safety_alerts, proximity_threshold, operational_status
+
+### Safety & Incident Data
+- incident_id, operator_id, machine_id, incident_type, timestamp
+- safety_check_logs, compliance_status, resolution_notes
+- severity_level, location_coordinates, preventive_measures
+
+### Performance Data
+- performance_id, operator_id, task_id, completion_time, quality_score
+- safety_violations, efficiency_rating, credit_adjustments
+- behavioral_patterns, improvement_suggestions
+
+## Additional Features for Enhanced User Experience
+
+### 1. Weather Integration
+- Weather-based task scheduling and safety alerts
+- Visibility and condition warnings
+
+### 2. Maintenance Integration
+- Automatic task creation for scheduled maintenance
+- Machine downtime tracking and rescheduling
+
+### 3. Communication Hub
+- In-app messaging between operators and admins
+- Emergency communication protocols
+
+### 4. Advanced Analytics
+- Predictive analytics for operational optimization
+- Cost analysis and efficiency reporting
+
+### 5. Integration Capabilities
+- CAT Connect API integration
+- Third-party fleet management system compatibility
+- ERP system integration for comprehensive business operations
+
+## Security & Compliance
+- **Data Encryption**: End-to-end encryption for sensitive data
+- **GDPR Compliance**: Privacy controls and data management
+- **Audit Logging**: Comprehensive activity tracking
+- **Role-Based Access Control**: Granular permission system
+
+## Performance Requirements
+- **Response Time**: <2 seconds for critical operations
+- **Offline Capability**: 8 hours of offline operation
+- **Scalability**: Support for 1000+ concurrent operators
+- **Reliability**: 99.9% uptime for critical safety features
+
+## Risks and Mitigations
+- **GPS Accuracy**: Implement multiple location sources and error handling
+- **Network Connectivity**: Robust offline mode with data synchronization
+- **Security Vulnerabilities**: Regular security audits and penetration testing
+- **User Adoption**: Comprehensive training and gradual feature rollout
+- **Data Privacy**: Strict data governance and compliance measures p

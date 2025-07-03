@@ -1,0 +1,244 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Initialize Project Repository and Basic React Setup",
+        "description": "Set up a simple React 18 project with TypeScript for a quick hackathon MVP. Focus on frontend only with mock data and local storage. Remove backend, database, Redis, Docker, and complex CI/CD.",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "details": "Create a single React app using Create React App or Vite with TypeScript template. Use mock data stored in local storage to simulate operators, tasks, and machines. No backend or database setup. Configure minimal GitHub Actions or skip CI/CD for MVP. Prepare for quick deployment to Vercel or Netlify. Recommended: React 18.2.0, TypeScript 5.3.3.",
+        "testStrategy": "Unit tests for React components and mock data handling. Manual end-to-end test of UI flows and local storage persistence.",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize React Project with TypeScript",
+            "description": "Set up a new React application using Create React App with the TypeScript template.",
+            "dependencies": [],
+            "details": "Run `npx create-react-app my-app --template typescript` and navigate into the project directory with `cd my-app`.[1][3]",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Install Essential UI Libraries",
+            "description": "Add Tailwind CSS and icon libraries to the project for rapid UI development.",
+            "dependencies": [
+              1
+            ],
+            "details": "Install Tailwind CSS following official setup steps, and add a popular icon library (e.g., react-icons) using npm or yarn.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Configure Tailwind CSS",
+            "description": "Set up Tailwind CSS configuration files and integrate with the React project.",
+            "dependencies": [
+              2
+            ],
+            "details": "Generate Tailwind config files, update CSS imports, and ensure Tailwind is working by testing with sample classes.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Set Up Basic Routing",
+            "description": "Add React Router and configure basic routes for the application.",
+            "dependencies": [
+              1
+            ],
+            "details": "Install react-router-dom, create a simple routing structure (e.g., Home, About, NotFound pages), and verify navigation.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Create Mock Data Structure",
+            "description": "Define and implement a mock data structure for use in components.",
+            "dependencies": [
+              1
+            ],
+            "details": "Create TypeScript interfaces/types for mock data, and add sample data files or in-memory objects for development.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Build Initial UI Components",
+            "description": "Develop basic UI components using the installed libraries and mock data.",
+            "dependencies": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "details": "Create and style components (e.g., lists, cards) that consume mock data and demonstrate routing.",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 7,
+            "title": "Deploy to Vercel",
+            "description": "Deploy the React application to Vercel for live preview and sharing.",
+            "dependencies": [],
+            "details": "Connect the repository to Vercel, configure build settings if needed, and verify successful deployment.",
+            "status": "done",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Design and Implement Mock Data Schema",
+        "description": "Design mock data structures for operators, tasks, machines, safety/incidents, and performance data to simulate the database schema in local storage.",
+        "status": "done",
+        "dependencies": [
+          1
+        ],
+        "priority": "high",
+        "details": "Create JavaScript/TypeScript objects or JSON files representing operators, tasks, machines, safety incidents, and performance data. Store and manage this data in browser local storage to simulate CRUD operations. Example structures: operators(operator_id, name, role, current_location, performance_score, etc.), tasks(task_id, title, description, priority, location, assigned_operator, etc.), machines(machine_id, model, location, status, etc.).",
+        "testStrategy": "Validate mock data structure correctness. Test CRUD operations on local storage. Ensure data integrity and realistic simulation.",
+        "subtasks": []
+      },
+      {
+        "id": 3,
+        "title": "Implement Simple User Authentication",
+        "description": "Develop basic multi-role login (admin/operator) without TOTP or Redis session management, using local storage for session persistence.",
+        "status": "pending",
+        "dependencies": [
+          2
+        ],
+        "priority": "high",
+        "details": "Implement frontend-only authentication with username/password stored in mock data. Use local storage to persist login state. No backend or JWT. Provide simple login/logout UI and role-based UI rendering.",
+        "testStrategy": "Unit tests for login/logout logic. Manual tests for role-based UI access.",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Build Core Task Management System UI",
+        "description": "Develop React UI for admin task assignment, operator task dashboard, progress tracking, and basic time estimation using mock data.",
+        "status": "pending",
+        "dependencies": [
+          3
+        ],
+        "priority": "high",
+        "details": "Create React components for task CRUD operations using mock data in local storage. Build operator dashboard showing assigned tasks and progress bars. Implement simple time estimation logic in frontend. Use React 18, TypeScript, and Material-UI or similar for UI styling.",
+        "testStrategy": "Unit tests for UI components. Manual integration tests for task assignment and progress tracking flows.",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Implement Basic Location Simulation Features",
+        "description": "Simulate operator and machine locations with mock data and simple UI updates; no real GPS integration.",
+        "status": "pending",
+        "dependencies": [
+          4
+        ],
+        "priority": "medium",
+        "details": "Use mock location coordinates stored in local storage. Simulate location changes with timers or user input. Display locations on a simple map or list. Prioritize tasks based on simulated proximity. Use WebSocket or similar only if feasible; otherwise simulate real-time updates in frontend.",
+        "testStrategy": "Unit tests for location simulation logic. Manual tests for UI updates and task prioritization.",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Develop Basic Safety and Monitoring UI",
+        "description": "Implement UI components for proximity alerts, safety compliance logging, and incident reporting using mock data.",
+        "status": "pending",
+        "dependencies": [
+          5
+        ],
+        "priority": "medium",
+        "details": "Simulate proximity alerts based on mock location data. Provide forms for safety check logging and incident reporting stored in local storage. Show hourly safety reminders as UI notifications or alerts. No push notifications or backend integration.",
+        "testStrategy": "Unit tests for alert and logging logic. Manual tests for UI notification display.",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Build AI-Powered Learning Hub UI with Mock Content",
+        "description": "Develop UI for LLM-generated tutorials and adaptive learning using static mock content; no real API integration.",
+        "status": "pending",
+        "dependencies": [
+          4
+        ],
+        "priority": "medium",
+        "details": "Create React components to display tutorial content and learning modules based on mock performance data. Simulate adaptive learning by conditionally showing different content. No calls to OpenAI or Anthropic APIs in MVP.",
+        "testStrategy": "Unit tests for content rendering. Manual tests for adaptive content display.",
+        "subtasks": []
+      },
+      {
+        "id": 8,
+        "title": "Implement Performance and Credit System UI",
+        "description": "Develop frontend UI for credit score tracking, behavioral analysis, and performance dashboard using mock data.",
+        "status": "pending",
+        "dependencies": [
+          4
+        ],
+        "priority": "medium",
+        "details": "Use mock performance and credit data stored in local storage. Build React dashboard with charts using Chart.js or D3.js to visualize scores and behavior patterns. No backend analytics or real-time updates.",
+        "testStrategy": "Unit tests for scoring logic. Manual tests for dashboard visualization.",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Develop Machine Behavior Monitoring UI",
+        "description": "Implement frontend UI for threshold monitoring, predictive maintenance alerts, and usage analytics with mock data.",
+        "status": "pending",
+        "dependencies": [
+          2
+        ],
+        "priority": "medium",
+        "details": "Simulate machine usage patterns and alerts using mock data in local storage. Display usage reports and alerts in React components. No ML integration or backend processing in MVP.",
+        "testStrategy": "Unit tests for monitoring UI logic. Manual tests for alert display and analytics visualization.",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Implement Basic User Experience Features",
+        "description": "Develop simple multi-lingual support and offline functionality; omit voice controls for MVP.",
+        "status": "pending",
+        "dependencies": [
+          4
+        ],
+        "priority": "low",
+        "details": "Integrate i18next for multi-lingual UI support with a few languages. Implement service workers for offline mode using Create React App or Vite defaults. Skip voice-enabled controls for MVP.",
+        "testStrategy": "Unit tests for i18n and offline support. Manual tests for language switching and offline usage.",
+        "subtasks": []
+      },
+      {
+        "id": 11,
+        "title": "Implement Basic Security and Compliance Features",
+        "description": "Implement minimal security features suitable for frontend-only MVP, focusing on data privacy and role-based UI rendering.",
+        "status": "pending",
+        "dependencies": [
+          3
+        ],
+        "priority": "medium",
+        "details": "No encryption or GDPR backend compliance needed. Ensure role-based UI access control in frontend. Log critical actions in local storage audit logs for demo purposes.",
+        "testStrategy": "Unit tests for role-based UI. Manual tests for audit log entries.",
+        "subtasks": []
+      },
+      {
+        "id": 12,
+        "title": "Implement Integration and Advanced Analytics UI",
+        "description": "Skip real API integrations; simulate CAT Connect and ERP data with mock data and build advanced analytics UI components.",
+        "status": "pending",
+        "dependencies": [
+          2,
+          8,
+          9
+        ],
+        "priority": "low",
+        "details": "Use mock machine data to simulate CAT Connect API responses. Build analytics dashboards with Chart.js or D3.js using mock data. No real API calls or ERP integration in MVP.",
+        "testStrategy": "Unit tests for analytics UI. Manual tests for data visualization.",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "created": "2025-07-03T09:36:26.941Z",
+      "updated": "2025-07-03T10:07:21.595Z",
+      "description": "Tasks for master context"
+    }
+  }
+}
