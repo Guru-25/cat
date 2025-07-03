@@ -8,9 +8,24 @@ const Login = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simple mock login - in a real app, you'd validate credentials
+    
+    // Mock authentication with role-based access
     if (credentials.username && credentials.password) {
+      let userRole = 'operator'; // default role
+      let userName = credentials.username;
+      
+      // Admin credentials
+      if (credentials.username.toLowerCase() === 'admin' || 
+          credentials.username.toLowerCase() === 'supervisor') {
+        userRole = 'admin';
+        userName = credentials.username.toLowerCase() === 'admin' ? 'System Admin' : 'Site Supervisor';
+      }
+      
+      // Store authentication info with role
       localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('userRole', userRole);
+      localStorage.setItem('userName', userName);
+      
       navigate('/dashboard');
     }
   };
@@ -62,8 +77,10 @@ const Login = () => {
             </button>
           </div>
           
-          <div className="text-center text-sm text-gray-600">
-            <p>Demo credentials: any username/password</p>
+          <div className="text-center text-sm text-gray-600 space-y-1">
+            <p><strong>Admin:</strong> username: "admin" or "supervisor"</p>
+            <p><strong>Operator:</strong> any other username</p>
+            <p>Password: anything</p>
           </div>
         </form>
       </div>

@@ -51,44 +51,13 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-
-          {/* User menu */}
-          <div className="flex items-center space-x-4">
-            <button className="text-gray-300 hover:text-white p-2 rounded-md">
+          
+          {/* Settings */}
+          <div className="flex items-center">
+            <button className="text-gray-300 hover:text-white p-2">
               <Cog6ToothIcon className="h-6 w-6" />
             </button>
-            <div className="flex items-center space-x-3">
-              <div className="text-right">
-                <div className="text-sm font-medium text-white">John Smith</div>
-                <div className="text-xs text-gray-300">Operator</div>
-              </div>
-              <div className="h-8 w-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                <span className="text-xs font-bold text-black">JS</span>
-              </div>
-            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      <div className="md:hidden">
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navigation.map((item) => (
-            <NavLink
-              key={item.name}
-              to={item.href}
-              className={({ isActive }) =>
-                `flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                  isActive
-                    ? 'text-yellow-400 bg-gray-900'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-700'
-                }`
-              }
-            >
-              <item.icon className="h-5 w-5 mr-3" />
-              {item.name}
-            </NavLink>
-          ))}
         </div>
       </div>
     </nav>

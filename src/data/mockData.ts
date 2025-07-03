@@ -18,7 +18,7 @@ export interface Task {
   description: string;
   assignedOperator: string;
   machine: string;
-  status: 'pending' | 'in-progress' | 'completed' | 'blocked';
+  status: 'pending' | 'in-progress' | 'done' | 'blocked';
   priority: 'low' | 'medium' | 'high';
   estimatedDuration: number; // in hours
   actualDuration?: number;
@@ -26,6 +26,21 @@ export interface Task {
   endTime?: string;
   location: string;
   progress: number; // percentage
+  progressHistory?: ProgressEntry[];
+  timeSpent?: number; // in minutes
+  lastUpdated?: string;
+  dueDate: string;
+  createdAt: string;
+}
+
+export interface ProgressEntry {
+  timestamp: string;
+  progress?: number;
+  status?: string;
+  notes?: string;
+  updatedBy?: string;
+  user: string;
+  action: string;
 }
 
 export interface Machine {
@@ -95,7 +110,18 @@ export const mockTasks: Task[] = [
     actualDuration: 6,
     startTime: '08:00',
     location: 'Construction Zone A',
-    progress: 75
+    progress: 75,
+    dueDate: new Date().toISOString(),
+    createdAt: new Date().toISOString(),
+    progressHistory: [{
+      timestamp: new Date().toISOString(),
+      progress: 75,
+      status: 'in-progress',
+      notes: 'Making good progress on excavation',
+      updatedBy: 'John Smith'
+    }],
+    timeSpent: 360,
+    lastUpdated: new Date().toISOString()
   }
 ];
 
