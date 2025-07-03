@@ -37,7 +37,7 @@ export interface Task {
   machine: string;
   status: 'pending' | 'in-progress' | 'done' | 'blocked';
   priority: 'low' | 'medium' | 'high';
-  estimatedDuration: number; // in hours
+  estimatedDuration?: number; // in hours - now optional
   actualDuration?: number;
   startTime?: string;
   endTime?: string;
@@ -428,4 +428,111 @@ export const updateMachineLocation = (machineId: number, newLocation: Coordinate
       : machine
   );
   localStorage.setItem('machines', JSON.stringify(updatedMachines));
+};
+
+// Time Estimation Utility - Simulates Flask API call
+export const estimateTaskTime = async (taskData: {
+  Task: string;
+  'Machine ID': string;
+  Operator: string;
+  'Units (e.g., cycles)': number;
+  'Avg. Time per Unit (min)': number;
+}): Promise<number> => {
+  // Simulate API call delay
+  await new Promise(resolve => setTimeout(resolve, 200));
+  
+  // Simple estimation logic based on task type and parameters
+  const baseMultipliers: { [key: string]: number } = {
+    'Excavate': 1.2,
+    'Level': 1.0,
+    'Transport': 0.8,
+    'Maintenance': 1.5,
+    'Inspection': 0.6,
+    'Fueling': 0.7,
+    'Loading': 0.9,
+    'Grading': 1.1,
+    'Clearing': 1.3,
+    'Default': 1.0
+  };
+
+  // Get base multiplier based on task type
+  const taskType = Object.keys(baseMultipliers).find(type => 
+    taskData.Task.toLowerCase().includes(type.toLowerCase())
+  ) || 'Default';
+  
+  const baseMultiplier = baseMultipliers[taskType];
+  
+  // Machine efficiency factors
+  const machineEfficiency: { [key: string]: number } = {
+    'CAT 336F': 1.0,  // Excavator - standard
+    'CAT D6T': 0.9,   // Bulldozer - efficient
+    'CAT 950M': 0.95, // Loader - good
+    'CAT 320': 1.1    // Older excavator - slower
+  };
+
+  // Get machine efficiency
+  const machineType = Object.keys(machineEfficiency).find(type =>
+    taskData['Machine ID'].includes(type.replace(/\s/g, ''))
+  );
+  const efficiency = machineType ? machineEfficiency[machineType] : 1.0;
+
+  // Operator experience factor (simulated based on operator ID)
+  const operatorId = taskData.Operator;
+  const operatorExperience = 0.85 + (parseInt(operatorId.slice(-1)) * 0.05); // 0.85 to 1.1
+
+  // Calculate estimated time
+  const baseTime = taskData['Units (e.g., cycles)'] * taskData['Avg. Time per Unit (min)'];
+  const estimatedTime = baseTime * baseMultiplier * efficiency * operatorExperience;
+
+  // Add some realistic variance (±10%)
+  const variance = 0.9 + (Math.random() * 0.2);
+  const finalEstimate = estimatedTime * variance;
+
+  return Math.round(finalEstimate);
+};
+
+// Quick estimation for existing tasks (without full API simulation)
+export const getQuickTimeEstimate = (task: Task): number => {
+  // If task already has an estimated duration, return it
+  if (task.estimatedDuration) {
+    return task.estimatedDuration;
+  }
+
+  const taskTypeMultipliers: { [key: string]: number } = {
+    'excavate': 2.5,
+    'level': 1.8,
+    'transport': 1.2,
+    'maintenance': 2.8,
+    'inspection': 1.0,
+    'loading': 1.5,
+    'grading': 2.0,
+    'clearing': 2.2,
+    'backfill': 1.7,
+    'foundation': 2.6,
+    'trench': 1.9
+  };
+
+  // Find matching task type or use default range
+  const taskType = Object.keys(taskTypeMultipliers).find(type =>
+    task.title.toLowerCase().includes(type)
+  );
+
+  // Base time from task type or random value in 1-3 hour range
+  const baseTime = taskType 
+    ? taskTypeMultipliers[taskType] 
+    : 1 + Math.random() * 2; // Random between 1-3 hours
+  
+  // Adjust based on priority
+  const priorityMultiplier = task.priority === 'high' ? 1.2 : 
+                           task.priority === 'low' ? 0.8 : 1.0;
+
+  // Add progress factor (more time if less progress)
+  const progressFactor = task.progress < 10 ? 1.0 : 1 - ((task.progress) * 0.005);
+
+  // Add some randomness (±10%)
+  const randomFactor = 0.9 + (Math.random() * 0.2);
+
+  // Ensure result is within 1-3 hour range
+  const result = baseTime * priorityMultiplier * progressFactor * randomFactor;
+  return Math.max(1, Math.min(3, result));
 }; 

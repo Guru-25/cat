@@ -10,9 +10,10 @@ import {
   ClockIcon,
   ArrowPathIcon,
   TruckIcon,
-  ClipboardDocumentListIcon
+  ClipboardDocumentListIcon,
+  BoltIcon
 } from '@heroicons/react/24/outline';
-import { Task } from '../data/mockData';
+import { Task, getQuickTimeEstimate, estimateTaskTime } from '../data/mockData';
 import TaskModal from '../components/TaskModal';
 import TaskDetailModal from '../components/TaskDetailModal';
 import ProgressAnalytics from '../components/ProgressAnalytics';
@@ -27,6 +28,7 @@ const Tasks = () => {
   const [statusFilter, setStatusFilter] = useState('all');
   const [priorityFilter, setPriorityFilter] = useState('all');
   const [showReassignDropdown, setShowReassignDropdown] = useState<string | null>(null);
+  const [estimatingTasks, setEstimatingTasks] = useState<Set<number>>(new Set());
 
   // Get user info from localStorage
   const userName = localStorage.getItem('userName') || 'User';
@@ -46,6 +48,65 @@ const Tasks = () => {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
   }, [tasks]);
+
+  // Simulate API call for time estimation
+  const handleEstimateTime = async (task: Task) => {
+    setEstimatingTasks(prev => new Set(prev).add(task.id));
+    
+    try {
+      // Show a longer delay to simulate connecting to the Flask API
+      await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 1000));
+      
+      // Simulate the Flask API call structure
+      const apiData = {
+        'Task': task.title.split(' ')[0], // Get task type (e.g., "Excavate")
+        'Machine ID': task.machine.split(' ')[0] + '/' + (task.id.toString().padStart(3, '0')), // e.g., "CAT/001"
+        'Operator': 'OP/' + (1000 + (task.assignedOperator?.length || 5)), // e.g., "OP/1005"
+        'Units (e.g., cycles)': Math.ceil(Math.random() * 15) + 5, // 5-20 cycles
+        'Avg. Time per Unit (min)': Math.ceil(Math.random() * 6) + 4 // 4-10 min per unit
+      };
+
+      // Log the API request to console for demonstration
+      console.log('Sending request to PKL model API:', apiData);
+      
+      // Simulate another delay for the model processing time
+      await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 700));
+      
+      const estimatedTime = await estimateTaskTime(apiData);
+      
+      // Log the API response
+      console.log('Received response from PKL model API:', estimatedTime);
+      
+      // Update task with estimated time
+      const updatedTask = {
+        ...task,
+        estimatedDuration: estimatedTime / 60, // Convert to hours
+        progressHistory: [
+          ...(task.progressHistory || []),
+          {
+            timestamp: new Date().toISOString(),
+            user: userName,
+            action: 'time_estimated',
+            notes: `AI estimated ${estimatedTime} minutes (${(estimatedTime/60).toFixed(1)} hours)`
+          }
+        ],
+        lastUpdated: new Date().toISOString()
+      };
+
+      setTasks(prevTasks => 
+        prevTasks.map(t => t.id === task.id ? updatedTask : t)
+      );
+
+    } catch (error) {
+      console.error('Time estimation failed:', error);
+    } finally {
+      setEstimatingTasks(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(task.id);
+        return newSet;
+      });
+    }
+  };
 
   // Filter tasks based on user role
   const getFilteredTasks = () => {
@@ -426,6 +487,9 @@ const Tasks = () => {
                       Machine
                     </th>
                     <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                      Est. Time
+                    </th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                       Actions
                     </th>
                   </tr>
@@ -484,6 +548,39 @@ const Tasks = () => {
                         <div className="flex items-center">
                           <TruckIcon className="h-4 w-4 text-yellow-600 mr-2" />
                           <span className="text-sm text-gray-700">{task.machine}</span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="flex items-center">
+                          <BoltIcon className="h-4 w-4 text-yellow-600 mr-2" />
+                          {task.estimatedDuration ? (
+                            <span className="text-sm font-medium text-yellow-700">
+                              {(task.estimatedDuration).toFixed(1)}h
+                            </span>
+                          ) : (
+                            <div className="flex items-center">
+                              <span className="text-sm text-gray-500 mr-2">
+                                ~{getQuickTimeEstimate(task).toFixed(1)}h
+                              </span>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleEstimateTime(task);
+                                }}
+                                className="text-xs text-blue-600 hover:text-blue-800 font-medium flex items-center"
+                                disabled={estimatingTasks.has(task.id)}
+                              >
+                                {estimatingTasks.has(task.id) ? (
+                                  <>
+                                    <ArrowPathIcon className="h-3 w-3 mr-1 animate-spin" />
+                                    Calculating...
+                                  </>
+                                ) : (
+                                  <>AI Estimated</>
+                                )}
+                              </button>
+                            </div>
+                          )}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

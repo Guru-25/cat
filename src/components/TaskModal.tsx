@@ -15,13 +15,16 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onSave, onClose }) => {
     assignedOperator: '',
     machine: '',
     priority: 'medium' as 'low' | 'medium' | 'high',
-    estimatedDuration: 2,
+    estimatedDuration: 0,
     location: '',
+    locationCoordinates: { x: 0, y: 0 },
     status: 'pending' as 'pending' | 'in-progress' | 'done' | 'blocked',
     dueDate: '',
     progress: 0
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [useManualEstimate, setUseManualEstimate] = useState(false);
+  const [isEstimating, setIsEstimating] = useState(false);
 
   // Available operators and machines
   const availableOperators = ['John Smith', 'Sarah Johnson', 'Mike Davis', 'Lisa Wilson', 'Tom Brown'];
@@ -36,12 +39,14 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onSave, onClose }) => {
         assignedOperator: task.assignedOperator || '',
         machine: task.machine,
         priority: task.priority,
-        estimatedDuration: task.estimatedDuration,
+        estimatedDuration: task.estimatedDuration || 0,
         location: task.location,
+        locationCoordinates: task.locationCoordinates || { x: 0, y: 0 },
         status: task.status,
         dueDate: task.dueDate ? task.dueDate.split('T')[0] : new Date().toISOString().split('T')[0], // Extract date part or use today
         progress: task.progress
       });
+      setUseManualEstimate(!!task.estimatedDuration);
     } else {
       // Creating new task - set default due date to tomorrow
       const tomorrow = new Date();
@@ -52,12 +57,14 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onSave, onClose }) => {
         assignedOperator: '',
         machine: '',
         priority: 'medium',
-        estimatedDuration: 2,
+        estimatedDuration: 0,
         location: '',
+        locationCoordinates: { x: 0, y: 0 },
         status: 'pending',
         dueDate: tomorrow.toISOString().split('T')[0],
         progress: 0
       });
+      setUseManualEstimate(false);
     }
     setErrors({});
   }, [task]);
@@ -81,10 +88,6 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onSave, onClose }) => {
       newErrors.machine = 'Machine assignment is required';
     }
 
-    if (!formData.estimatedDuration || formData.estimatedDuration <= 0) {
-      newErrors.estimatedDuration = 'Valid estimated duration is required';
-    }
-
     if (!formData.location.trim()) {
       newErrors.location = 'Location is required';
     }
@@ -104,14 +107,43 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onSave, onClose }) => {
       return;
     }
 
+    // If using auto-estimate, simulate API call to PKL model
+    if (!useManualEstimate) {
+      setIsEstimating(true);
+      
+      // Simulate API call delay (1-2 seconds)
+      setTimeout(() => {
+        const taskData = {
+          title: formData.title.trim(),
+          description: formData.description.trim(),
+          assignedOperator: formData.assignedOperator,
+          machine: formData.machine,
+          priority: formData.priority,
+          estimatedDuration: 0, // Will be auto-estimated by the system
+          location: formData.location.trim(),
+          locationCoordinates: formData.locationCoordinates,
+          status: formData.status,
+          dueDate: new Date(formData.dueDate).toISOString(),
+          progress: formData.progress
+        };
+        
+        setIsEstimating(false);
+        onSave(taskData);
+      }, 1000 + Math.random() * 1000); // Random delay between 1-2 seconds
+      
+      return;
+    }
+
+    // For manual estimate, proceed immediately
     const taskData = {
       title: formData.title.trim(),
       description: formData.description.trim(),
       assignedOperator: formData.assignedOperator,
       machine: formData.machine,
       priority: formData.priority,
-      estimatedDuration: formData.estimatedDuration,
+      estimatedDuration: useManualEstimate ? formData.estimatedDuration : 0,
       location: formData.location.trim(),
+      locationCoordinates: formData.locationCoordinates,
       status: formData.status,
       dueDate: new Date(formData.dueDate).toISOString(),
       progress: formData.progress
@@ -269,20 +301,44 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onSave, onClose }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="estimatedDuration" className="block text-sm font-medium text-gray-700 mb-2">
-                Estimated Duration (hours) *
+                Estimated Duration (hours)
               </label>
-              <input
-                type="number"
-                id="estimatedDuration"
-                min="0.5"
-                step="0.5"
-                value={formData.estimatedDuration}
-                onChange={(e) => handleInputChange('estimatedDuration', Number(e.target.value))}
-                className={`w-full px-3 py-2 border rounded-lg focus:ring-yellow-400 focus:border-yellow-400 ${
-                  errors.estimatedDuration ? 'border-red-300' : 'border-gray-300'
-                }`}
-                placeholder="2.0"
-              />
+              <div className="flex items-center mb-2">
+                <input
+                  type="checkbox"
+                  id="useManualEstimate"
+                  checked={useManualEstimate}
+                  onChange={(e) => setUseManualEstimate(e.target.checked)}
+                  className="mr-2 h-4 w-4 text-yellow-500 focus:ring-yellow-400"
+                />
+                <label htmlFor="useManualEstimate" className="text-sm text-gray-600">
+                  Specify manually (leave unchecked for auto-estimate)
+                </label>
+              </div>
+              {useManualEstimate ? (
+                <input
+                  type="number"
+                  id="estimatedDuration"
+                  min="0.5"
+                  step="0.5"
+                  value={formData.estimatedDuration}
+                  onChange={(e) => handleInputChange('estimatedDuration', parseFloat(e.target.value))}
+                  className={`w-full px-3 py-2 border rounded-lg focus:ring-yellow-400 focus:border-yellow-400 ${
+                    errors.estimatedDuration ? 'border-red-300' : 'border-gray-300'
+                  }`}
+                  placeholder="Enter estimated hours"
+                />
+              ) : (
+                <div className="text-sm text-gray-500 italic border border-gray-200 bg-gray-50 px-3 py-2 rounded-lg flex items-center">
+                  <span>AI Estimated</span>
+                  {isEstimating && (
+                    <div className="ml-2 flex items-center">
+                      <div className="animate-spin h-4 w-4 border-2 border-yellow-500 rounded-full border-t-transparent"></div>
+                      <span className="ml-2 text-yellow-600">Connecting to model...</span>
+                    </div>
+                  )}
+                </div>
+              )}
               {errors.estimatedDuration && <p className="mt-1 text-sm text-red-600">{errors.estimatedDuration}</p>}
             </div>
 
@@ -344,15 +400,25 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onSave, onClose }) => {
             <button
               type="button"
               onClick={onClose}
-              className="btn-secondary"
+              className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="btn-primary"
+              disabled={isEstimating}
+              className={`px-4 py-2 bg-yellow-500 rounded-lg text-white hover:bg-yellow-600 transition-colors flex items-center ${
+                isEstimating ? 'opacity-75 cursor-not-allowed' : ''
+              }`}
             >
-              {task ? 'Update Task' : 'Create Task'}
+              {isEstimating ? (
+                <>
+                  <div className="animate-spin h-4 w-4 border-2 border-white rounded-full border-t-transparent mr-2"></div>
+                  Estimating...
+                </>
+              ) : (
+                task ? 'Update Task' : 'Create Task'
+              )}
             </button>
           </div>
         </form>

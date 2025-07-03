@@ -1,0 +1,1001 @@
+Task,Machine ID,Operator,"Units (e.g., cycles)",Avg. Time per Unit (min),Estimated Total Time (min)
+Routine Maintenance,EXC/002,OP/1002,12,4,48
+Equipment Transport,EXC/005,OP/1001,6,9,54
+Site Clearing,EXC/005,OP/1003,16,8,128
+Fueling,EXC/001,OP/1005,15,8,120
+Backfilling,EXC/003,OP/1003,6,7,42
+Equipment Transport,EXC/002,OP/1002,9,9,81
+Trench Excavation,EXC/004,OP/1002,8,5,40
+Equipment Transport,EXC/005,OP/1002,7,8,56
+Backfilling,EXC/003,OP/1001,13,9,117
+Operator Training,EXC/003,OP/1003,6,9,54
+Demolition,EXC/003,OP/1004,8,7,56
+Backfilling,EXC/001,OP/1004,18,9,162
+Trench Excavation,EXC/003,OP/1003,17,10,170
+Hazard Assessment,EXC/001,OP/1005,20,5,100
+Site Grading,EXC/001,OP/1003,8,6,48
+Fueling,EXC/005,OP/1002,12,9,108
+Attachment Installation,EXC/001,OP/1004,14,9,126
+Daily Inspection,EXC/002,OP/1001,19,10,190
+Trench Excavation,EXC/005,OP/1001,8,5,40
+Attachment Installation,EXC/004,OP/1003,20,10,200
+Backfilling,EXC/002,OP/1001,18,9,162
+Site Grading,EXC/005,OP/1003,20,9,180
+Site Clearing,EXC/004,OP/1005,18,7,126
+Demolition,EXC/003,OP/1004,12,10,120
+Trench Excavation,EXC/002,OP/1003,15,4,60
+Hazard Assessment,EXC/003,OP/1003,12,7,84
+Hazard Assessment,EXC/004,OP/1003,10,9,90
+Site Clearing,EXC/003,OP/1002,10,8,80
+Equipment Transport,EXC/005,OP/1001,10,5,50
+Hazard Assessment,EXC/005,OP/1003,12,7,84
+Equipment Transport,EXC/002,OP/1003,9,5,45
+Daily Inspection,EXC/004,OP/1003,12,10,120
+Fueling,EXC/003,OP/1004,14,7,98
+Backfilling,EXC/001,OP/1002,5,4,20
+Trench Excavation,EXC/005,OP/1001,13,10,130
+Attachment Installation,EXC/004,OP/1001,14,4,56
+Routine Maintenance,EXC/003,OP/1004,12,10,120
+Material Loading,EXC/005,OP/1001,7,9,63
+Safety Meeting,EXC/003,OP/1004,6,10,60
+Demolition,EXC/001,OP/1004,7,5,35
+Operator Training,EXC/005,OP/1003,5,9,45
+Equipment Transport,EXC/002,OP/1005,14,9,126
+Trench Excavation,EXC/005,OP/1002,11,9,99
+Equipment Transport,EXC/004,OP/1001,8,9,72
+Site Grading,EXC/005,OP/1004,19,5,95
+Hazard Assessment,EXC/003,OP/1003,11,6,66
+Routine Maintenance,EXC/003,OP/1003,6,8,48
+Site Clearing,EXC/005,OP/1005,12,7,84
+Hazard Assessment,EXC/005,OP/1001,18,4,72
+Operator Training,EXC/001,OP/1004,5,7,35
+Stockpiling,EXC/005,OP/1002,11,8,88
+Attachment Installation,EXC/003,OP/1004,15,4,60
+Hazard Assessment,EXC/001,OP/1002,20,9,180
+Site Clearing,EXC/003,OP/1001,20,4,80
+Stockpiling,EXC/005,OP/1002,9,4,36
+Daily Inspection,EXC/001,OP/1004,12,7,84
+Equipment Transport,EXC/004,OP/1002,5,9,45
+Stockpiling,EXC/002,OP/1005,13,10,130
+Routine Maintenance,EXC/003,OP/1005,15,4,60
+Operator Training,EXC/004,OP/1001,20,9,180
+Routine Maintenance,EXC/004,OP/1005,14,7,98
+Stockpiling,EXC/004,OP/1004,11,4,44
+Demolition,EXC/005,OP/1005,7,8,56
+Stockpiling,EXC/001,OP/1004,13,6,78
+Site Clearing,EXC/003,OP/1001,15,8,120
+Fueling,EXC/003,OP/1002,5,6,30
+Operator Training,EXC/004,OP/1002,19,9,171
+Fueling,EXC/005,OP/1005,6,9,54
+Backfilling,EXC/004,OP/1002,11,5,55
+Material Loading,EXC/005,OP/1004,9,7,63
+Stockpiling,EXC/005,OP/1003,11,5,55
+Site Clearing,EXC/005,OP/1004,7,6,42
+Daily Inspection,EXC/003,OP/1003,5,6,30
+Stockpiling,EXC/002,OP/1004,18,5,90
+Hazard Assessment,EXC/004,OP/1001,7,5,35
+Material Loading,EXC/002,OP/1003,12,6,72
+Operator Training,EXC/005,OP/1005,19,8,152
+Routine Maintenance,EXC/001,OP/1004,18,8,144
+Equipment Transport,EXC/005,OP/1005,10,8,80
+Demolition,EXC/004,OP/1001,17,7,119
+Routine Maintenance,EXC/004,OP/1005,17,4,68
+Demolition,EXC/005,OP/1005,16,4,64
+Attachment Installation,EXC/002,OP/1003,19,10,190
+Material Loading,EXC/004,OP/1002,6,6,36
+Attachment Installation,EXC/005,OP/1001,11,9,99
+Site Clearing,EXC/004,OP/1004,19,10,190
+Attachment Installation,EXC/001,OP/1005,19,4,76
+Attachment Installation,EXC/004,OP/1002,16,9,144
+Hazard Assessment,EXC/001,OP/1001,18,4,72
+Material Loading,EXC/002,OP/1001,9,7,63
+Site Grading,EXC/001,OP/1001,13,7,91
+Trench Excavation,EXC/003,OP/1005,13,10,130
+Safety Meeting,EXC/002,OP/1004,12,6,72
+Trench Excavation,EXC/004,OP/1001,7,4,28
+Site Grading,EXC/001,OP/1002,16,6,96
+Daily Inspection,EXC/004,OP/1003,6,5,30
+Material Loading,EXC/003,OP/1002,9,8,72
+Daily Inspection,EXC/005,OP/1001,19,6,114
+Equipment Transport,EXC/003,OP/1003,14,9,126
+Demolition,EXC/005,OP/1005,13,7,91
+Fueling,EXC/002,OP/1005,10,5,50
+Daily Inspection,EXC/005,OP/1001,16,10,160
+Stockpiling,EXC/001,OP/1005,16,4,64
+Demolition,EXC/005,OP/1003,14,4,56
+Demolition,EXC/005,OP/1005,13,6,78
+Material Loading,EXC/001,OP/1002,16,10,160
+Operator Training,EXC/002,OP/1005,7,10,70
+Safety Meeting,EXC/004,OP/1001,10,10,100
+Fueling,EXC/004,OP/1002,12,6,72
+Fueling,EXC/004,OP/1003,14,9,126
+Safety Meeting,EXC/001,OP/1003,18,10,180
+Attachment Installation,EXC/005,OP/1005,12,8,96
+Daily Inspection,EXC/003,OP/1004,16,6,96
+Equipment Transport,EXC/003,OP/1001,12,9,108
+Site Grading,EXC/003,OP/1002,15,10,150
+Trench Excavation,EXC/002,OP/1003,7,5,35
+Fueling,EXC/002,OP/1002,17,8,136
+Fueling,EXC/001,OP/1002,19,9,171
+Demolition,EXC/001,OP/1003,17,6,102
+Site Clearing,EXC/004,OP/1005,15,7,105
+Backfilling,EXC/003,OP/1003,9,9,81
+Safety Meeting,EXC/003,OP/1004,6,4,24
+Stockpiling,EXC/001,OP/1003,17,5,85
+Stockpiling,EXC/001,OP/1002,14,6,84
+Equipment Transport,EXC/002,OP/1004,6,6,36
+Demolition,EXC/003,OP/1002,20,7,140
+Demolition,EXC/001,OP/1005,13,10,130
+Backfilling,EXC/002,OP/1003,6,7,42
+Demolition,EXC/005,OP/1001,6,10,60
+Material Loading,EXC/002,OP/1004,6,9,54
+Daily Inspection,EXC/003,OP/1003,7,10,70
+Equipment Transport,EXC/004,OP/1003,13,9,117
+Equipment Transport,EXC/005,OP/1005,7,7,49
+Attachment Installation,EXC/003,OP/1004,20,6,120
+Safety Meeting,EXC/002,OP/1005,13,7,91
+Daily Inspection,EXC/005,OP/1004,6,4,24
+Attachment Installation,EXC/005,OP/1002,5,5,25
+Backfilling,EXC/004,OP/1001,16,5,80
+Demolition,EXC/002,OP/1001,20,8,160
+Attachment Installation,EXC/003,OP/1004,13,8,104
+Routine Maintenance,EXC/001,OP/1004,11,4,44
+Hazard Assessment,EXC/002,OP/1003,14,5,70
+Routine Maintenance,EXC/002,OP/1001,18,6,108
+Hazard Assessment,EXC/002,OP/1001,16,10,160
+Site Grading,EXC/002,OP/1003,11,5,55
+Equipment Transport,EXC/004,OP/1001,20,4,80
+Trench Excavation,EXC/003,OP/1004,19,6,114
+Demolition,EXC/005,OP/1004,12,10,120
+Equipment Transport,EXC/004,OP/1002,11,8,88
+Attachment Installation,EXC/003,OP/1002,12,10,120
+Equipment Transport,EXC/001,OP/1004,20,8,160
+Equipment Transport,EXC/003,OP/1001,16,5,80
+Backfilling,EXC/005,OP/1005,18,5,90
+Hazard Assessment,EXC/002,OP/1003,16,4,64
+Fueling,EXC/003,OP/1002,16,8,128
+Backfilling,EXC/002,OP/1005,15,6,90
+Demolition,EXC/002,OP/1002,16,10,160
+Hazard Assessment,EXC/005,OP/1002,18,7,126
+Safety Meeting,EXC/003,OP/1002,15,8,120
+Routine Maintenance,EXC/001,OP/1001,8,4,32
+Demolition,EXC/001,OP/1002,17,6,102
+Daily Inspection,EXC/004,OP/1004,5,5,25
+Site Grading,EXC/003,OP/1005,6,9,54
+Safety Meeting,EXC/003,OP/1002,10,10,100
+Fueling,EXC/002,OP/1001,13,5,65
+Material Loading,EXC/004,OP/1004,6,5,30
+Material Loading,EXC/005,OP/1003,7,10,70
+Attachment Installation,EXC/005,OP/1003,17,6,102
+Site Clearing,EXC/001,OP/1005,16,9,144
+Material Loading,EXC/002,OP/1005,9,7,63
+Site Clearing,EXC/002,OP/1004,7,10,70
+Attachment Installation,EXC/004,OP/1003,6,8,48
+Safety Meeting,EXC/005,OP/1002,5,6,30
+Daily Inspection,EXC/003,OP/1005,6,9,54
+Fueling,EXC/004,OP/1003,14,6,84
+Safety Meeting,EXC/002,OP/1002,16,6,96
+Routine Maintenance,EXC/002,OP/1002,12,10,120
+Backfilling,EXC/003,OP/1005,5,4,20
+Safety Meeting,EXC/003,OP/1002,15,5,75
+Site Grading,EXC/005,OP/1001,12,10,120
+Demolition,EXC/002,OP/1003,10,5,50
+Routine Maintenance,EXC/005,OP/1002,5,4,20
+Daily Inspection,EXC/002,OP/1003,5,8,40
+Stockpiling,EXC/002,OP/1003,13,9,117
+Site Grading,EXC/001,OP/1002,14,8,112
+Backfilling,EXC/003,OP/1003,20,6,120
+Operator Training,EXC/004,OP/1005,20,4,80
+Stockpiling,EXC/001,OP/1005,11,7,77
+Demolition,EXC/004,OP/1003,7,5,35
+Attachment Installation,EXC/004,OP/1001,5,9,45
+Stockpiling,EXC/005,OP/1003,8,4,32
+Site Grading,EXC/004,OP/1003,19,10,190
+Routine Maintenance,EXC/005,OP/1002,15,9,135
+Demolition,EXC/004,OP/1004,5,9,45
+Routine Maintenance,EXC/005,OP/1001,5,6,30
+Routine Maintenance,EXC/002,OP/1005,13,4,52
+Demolition,EXC/001,OP/1004,5,5,25
+Daily Inspection,EXC/002,OP/1002,6,10,60
+Hazard Assessment,EXC/004,OP/1004,6,10,60
+Routine Maintenance,EXC/002,OP/1005,12,4,48
+Routine Maintenance,EXC/005,OP/1003,5,8,40
+Fueling,EXC/003,OP/1002,10,10,100
+Equipment Transport,EXC/001,OP/1004,5,7,35
+Fueling,EXC/003,OP/1001,19,4,76
+Routine Maintenance,EXC/002,OP/1005,10,8,80
+Routine Maintenance,EXC/002,OP/1003,16,4,64
+Stockpiling,EXC/002,OP/1003,11,5,55
+Trench Excavation,EXC/005,OP/1004,19,6,114
+Routine Maintenance,EXC/003,OP/1005,8,4,32
+Backfilling,EXC/004,OP/1005,8,5,40
+Site Grading,EXC/005,OP/1005,8,5,40
+Material Loading,EXC/004,OP/1003,6,5,30
+Safety Meeting,EXC/002,OP/1002,6,8,48
+Equipment Transport,EXC/005,OP/1001,9,8,72
+Hazard Assessment,EXC/004,OP/1001,10,10,100
+Trench Excavation,EXC/001,OP/1001,13,9,117
+Equipment Transport,EXC/005,OP/1002,13,10,130
+Daily Inspection,EXC/005,OP/1005,9,7,63
+Trench Excavation,EXC/001,OP/1001,20,10,200
+Demolition,EXC/004,OP/1001,18,10,180
+Demolition,EXC/001,OP/1005,15,6,90
+Hazard Assessment,EXC/002,OP/1003,6,7,42
+Demolition,EXC/005,OP/1004,6,9,54
+Hazard Assessment,EXC/005,OP/1004,10,6,60
+Fueling,EXC/003,OP/1004,7,5,35
+Equipment Transport,EXC/002,OP/1002,19,10,190
+Site Grading,EXC/001,OP/1002,16,8,128
+Backfilling,EXC/003,OP/1005,18,10,180
+Stockpiling,EXC/003,OP/1001,6,6,36
+Site Clearing,EXC/003,OP/1002,18,8,144
+Fueling,EXC/002,OP/1001,15,6,90
+Stockpiling,EXC/005,OP/1004,6,5,30
+Attachment Installation,EXC/002,OP/1002,11,5,55
+Safety Meeting,EXC/001,OP/1004,5,8,40
+Fueling,EXC/005,OP/1002,8,8,64
+Operator Training,EXC/005,OP/1001,9,7,63
+Equipment Transport,EXC/001,OP/1001,8,7,56
+Material Loading,EXC/003,OP/1002,20,7,140
+Safety Meeting,EXC/003,OP/1003,10,10,100
+Hazard Assessment,EXC/005,OP/1003,19,8,152
+Demolition,EXC/003,OP/1005,10,6,60
+Site Clearing,EXC/005,OP/1001,11,10,110
+Attachment Installation,EXC/002,OP/1004,17,7,119
+Trench Excavation,EXC/005,OP/1002,20,8,160
+Site Grading,EXC/004,OP/1001,9,7,63
+Trench Excavation,EXC/001,OP/1003,18,8,144
+Backfilling,EXC/001,OP/1001,10,5,50
+Hazard Assessment,EXC/003,OP/1005,16,9,144
+Equipment Transport,EXC/002,OP/1003,13,8,104
+Equipment Transport,EXC/005,OP/1004,5,10,50
+Site Grading,EXC/003,OP/1005,9,6,54
+Trench Excavation,EXC/005,OP/1001,20,6,120
+Demolition,EXC/001,OP/1004,11,10,110
+Site Grading,EXC/005,OP/1001,12,6,72
+Routine Maintenance,EXC/002,OP/1003,5,8,40
+Site Clearing,EXC/004,OP/1004,8,5,40
+Safety Meeting,EXC/001,OP/1001,8,7,56
+Equipment Transport,EXC/004,OP/1005,19,10,190
+Stockpiling,EXC/005,OP/1002,20,6,120
+Operator Training,EXC/003,OP/1003,13,8,104
+Site Grading,EXC/001,OP/1005,8,5,40
+Fueling,EXC/001,OP/1003,16,8,128
+Routine Maintenance,EXC/001,OP/1002,14,5,70
+Routine Maintenance,EXC/005,OP/1004,13,4,52
+Trench Excavation,EXC/001,OP/1005,11,6,66
+Operator Training,EXC/003,OP/1005,17,10,170
+Demolition,EXC/004,OP/1001,16,7,112
+Daily Inspection,EXC/001,OP/1002,15,7,105
+Demolition,EXC/002,OP/1004,16,9,144
+Routine Maintenance,EXC/004,OP/1001,7,7,49
+Safety Meeting,EXC/003,OP/1002,5,8,40
+Site Clearing,EXC/002,OP/1002,8,8,64
+Demolition,EXC/002,OP/1004,14,10,140
+Material Loading,EXC/002,OP/1003,20,4,80
+Site Clearing,EXC/004,OP/1004,7,6,42
+Hazard Assessment,EXC/004,OP/1002,13,9,117
+Routine Maintenance,EXC/005,OP/1001,15,10,150
+Safety Meeting,EXC/005,OP/1004,20,9,180
+Site Grading,EXC/004,OP/1001,15,10,150
+Site Grading,EXC/002,OP/1003,18,4,72
+Demolition,EXC/004,OP/1001,17,10,170
+Equipment Transport,EXC/004,OP/1001,19,6,114
+Attachment Installation,EXC/005,OP/1005,5,10,50
+Hazard Assessment,EXC/004,OP/1002,11,9,99
+Fueling,EXC/005,OP/1005,6,8,48
+Daily Inspection,EXC/005,OP/1002,8,5,40
+Backfilling,EXC/004,OP/1001,9,7,63
+Site Clearing,EXC/004,OP/1004,19,6,114
+Daily Inspection,EXC/005,OP/1005,14,5,70
+Attachment Installation,EXC/004,OP/1001,20,5,100
+Trench Excavation,EXC/002,OP/1005,17,9,153
+Demolition,EXC/005,OP/1001,20,10,200
+Stockpiling,EXC/003,OP/1003,9,8,72
+Fueling,EXC/001,OP/1004,13,9,117
+Demolition,EXC/001,OP/1005,8,7,56
+Equipment Transport,EXC/001,OP/1002,16,5,80
+Fueling,EXC/004,OP/1001,16,6,96
+Routine Maintenance,EXC/003,OP/1002,19,9,171
+Operator Training,EXC/001,OP/1004,11,8,88
+Safety Meeting,EXC/003,OP/1005,14,10,140
+Demolition,EXC/003,OP/1001,16,8,128
+Operator Training,EXC/004,OP/1001,8,4,32
+Site Grading,EXC/003,OP/1005,8,7,56
+Operator Training,EXC/002,OP/1004,9,4,36
+Demolition,EXC/001,OP/1004,5,8,40
+Operator Training,EXC/001,OP/1001,9,6,54
+Hazard Assessment,EXC/005,OP/1002,20,7,140
+Trench Excavation,EXC/004,OP/1002,19,8,152
+Material Loading,EXC/005,OP/1002,16,7,112
+Demolition,EXC/002,OP/1002,8,7,56
+Stockpiling,EXC/003,OP/1004,14,5,70
+Attachment Installation,EXC/001,OP/1005,5,8,40
+Daily Inspection,EXC/001,OP/1005,20,8,160
+Stockpiling,EXC/004,OP/1004,13,7,91
+Fueling,EXC/001,OP/1004,10,9,90
+Site Grading,EXC/002,OP/1003,9,8,72
+Site Clearing,EXC/004,OP/1004,17,5,85
+Hazard Assessment,EXC/002,OP/1005,13,5,65
+Fueling,EXC/002,OP/1002,9,7,63
+Routine Maintenance,EXC/005,OP/1005,10,5,50
+Stockpiling,EXC/005,OP/1005,15,5,75
+Demolition,EXC/002,OP/1003,13,4,52
+Stockpiling,EXC/001,OP/1002,16,8,128
+Safety Meeting,EXC/003,OP/1004,14,5,70
+Operator Training,EXC/004,OP/1005,16,6,96
+Safety Meeting,EXC/005,OP/1005,11,7,77
+Equipment Transport,EXC/004,OP/1003,17,9,153
+Stockpiling,EXC/005,OP/1004,5,6,30
+Stockpiling,EXC/003,OP/1001,14,4,56
+Stockpiling,EXC/004,OP/1004,20,7,140
+Daily Inspection,EXC/001,OP/1005,10,8,80
+Safety Meeting,EXC/003,OP/1002,19,9,171
+Trench Excavation,EXC/004,OP/1005,9,8,72
+Demolition,EXC/005,OP/1001,9,9,81
+Material Loading,EXC/002,OP/1002,18,7,126
+Hazard Assessment,EXC/003,OP/1005,8,10,80
+Daily Inspection,EXC/005,OP/1001,8,9,72
+Hazard Assessment,EXC/001,OP/1002,16,7,112
+Safety Meeting,EXC/005,OP/1001,19,10,190
+Safety Meeting,EXC/005,OP/1002,10,6,60
+Routine Maintenance,EXC/002,OP/1003,8,5,40
+Routine Maintenance,EXC/005,OP/1001,15,4,60
+Hazard Assessment,EXC/005,OP/1002,7,6,42
+Attachment Installation,EXC/003,OP/1005,12,4,48
+Safety Meeting,EXC/005,OP/1004,19,9,171
+Trench Excavation,EXC/002,OP/1002,16,5,80
+Attachment Installation,EXC/002,OP/1005,18,8,144
+Equipment Transport,EXC/005,OP/1004,11,5,55
+Routine Maintenance,EXC/001,OP/1004,12,6,72
+Attachment Installation,EXC/001,OP/1002,12,6,72
+Attachment Installation,EXC/003,OP/1004,9,7,63
+Backfilling,EXC/002,OP/1005,12,5,60
+Trench Excavation,EXC/005,OP/1004,14,10,140
+Demolition,EXC/004,OP/1005,12,8,96
+Backfilling,EXC/002,OP/1001,15,7,105
+Material Loading,EXC/004,OP/1005,6,4,24
+Site Grading,EXC/001,OP/1001,10,6,60
+Equipment Transport,EXC/002,OP/1003,10,5,50
+Hazard Assessment,EXC/001,OP/1005,16,8,128
+Equipment Transport,EXC/004,OP/1002,18,4,72
+Site Grading,EXC/005,OP/1002,9,6,54
+Stockpiling,EXC/002,OP/1004,9,8,72
+Routine Maintenance,EXC/005,OP/1001,7,5,35
+Backfilling,EXC/004,OP/1002,15,6,90
+Stockpiling,EXC/001,OP/1002,7,7,49
+Equipment Transport,EXC/005,OP/1005,11,4,44
+Material Loading,EXC/001,OP/1004,20,8,160
+Hazard Assessment,EXC/003,OP/1004,14,5,70
+Hazard Assessment,EXC/001,OP/1005,10,8,80
+Hazard Assessment,EXC/005,OP/1002,14,9,126
+Fueling,EXC/005,OP/1003,6,4,24
+Site Grading,EXC/002,OP/1003,20,10,200
+Site Clearing,EXC/002,OP/1002,7,5,35
+Equipment Transport,EXC/003,OP/1001,9,7,63
+Hazard Assessment,EXC/003,OP/1005,10,8,80
+Backfilling,EXC/002,OP/1002,20,8,160
+Backfilling,EXC/001,OP/1002,11,6,66
+Operator Training,EXC/003,OP/1003,18,6,108
+Fueling,EXC/002,OP/1001,15,10,150
+Demolition,EXC/001,OP/1002,18,4,72
+Safety Meeting,EXC/002,OP/1003,17,4,68
+Site Clearing,EXC/002,OP/1001,5,10,50
+Daily Inspection,EXC/002,OP/1003,16,7,112
+Trench Excavation,EXC/005,OP/1005,12,6,72
+Daily Inspection,EXC/004,OP/1004,7,7,49
+Equipment Transport,EXC/005,OP/1005,18,9,162
+Fueling,EXC/002,OP/1005,14,8,112
+Daily Inspection,EXC/004,OP/1005,13,8,104
+Fueling,EXC/001,OP/1004,15,9,135
+Trench Excavation,EXC/001,OP/1003,6,6,36
+Routine Maintenance,EXC/003,OP/1002,14,9,126
+Operator Training,EXC/005,OP/1001,13,7,91
+Safety Meeting,EXC/004,OP/1002,14,7,98
+Safety Meeting,EXC/005,OP/1001,17,5,85
+Material Loading,EXC/003,OP/1002,5,9,45
+Demolition,EXC/004,OP/1005,13,10,130
+Site Grading,EXC/002,OP/1002,20,6,120
+Stockpiling,EXC/001,OP/1001,5,7,35
+Backfilling,EXC/001,OP/1004,13,10,130
+Fueling,EXC/002,OP/1002,7,6,42
+Hazard Assessment,EXC/005,OP/1005,11,10,110
+Safety Meeting,EXC/005,OP/1001,7,5,35
+Daily Inspection,EXC/005,OP/1005,7,5,35
+Material Loading,EXC/004,OP/1005,6,9,54
+Operator Training,EXC/005,OP/1005,11,9,99
+Stockpiling,EXC/005,OP/1005,17,7,119
+Hazard Assessment,EXC/003,OP/1002,6,6,36
+Demolition,EXC/001,OP/1002,15,7,105
+Operator Training,EXC/002,OP/1005,12,10,120
+Backfilling,EXC/002,OP/1005,12,4,48
+Hazard Assessment,EXC/004,OP/1001,14,6,84
+Operator Training,EXC/002,OP/1002,12,7,84
+Site Clearing,EXC/003,OP/1001,10,7,70
+Hazard Assessment,EXC/004,OP/1003,14,8,112
+Attachment Installation,EXC/004,OP/1003,19,7,133
+Fueling,EXC/005,OP/1003,18,5,90
+Site Grading,EXC/002,OP/1001,10,5,50
+Hazard Assessment,EXC/004,OP/1002,5,7,35
+Demolition,EXC/001,OP/1001,10,4,40
+Equipment Transport,EXC/002,OP/1005,5,4,20
+Fueling,EXC/003,OP/1003,20,6,120
+Attachment Installation,EXC/001,OP/1003,12,7,84
+Daily Inspection,EXC/005,OP/1002,8,5,40
+Fueling,EXC/002,OP/1004,8,9,72
+Daily Inspection,EXC/005,OP/1005,9,8,72
+Operator Training,EXC/005,OP/1003,17,7,119
+Hazard Assessment,EXC/002,OP/1005,7,9,63
+Fueling,EXC/005,OP/1005,11,6,66
+Hazard Assessment,EXC/005,OP/1005,9,7,63
+Fueling,EXC/005,OP/1004,11,4,44
+Operator Training,EXC/003,OP/1002,13,6,78
+Material Loading,EXC/002,OP/1004,17,4,68
+Safety Meeting,EXC/004,OP/1001,12,10,120
+Attachment Installation,EXC/004,OP/1002,15,8,120
+Site Clearing,EXC/003,OP/1002,18,7,126
+Routine Maintenance,EXC/003,OP/1004,6,10,60
+Demolition,EXC/004,OP/1003,20,7,140
+Attachment Installation,EXC/003,OP/1005,10,8,80
+Backfilling,EXC/005,OP/1003,5,8,40
+Routine Maintenance,EXC/003,OP/1005,13,9,117
+Daily Inspection,EXC/003,OP/1004,11,5,55
+Operator Training,EXC/002,OP/1003,16,8,128
+Stockpiling,EXC/004,OP/1005,19,10,190
+Hazard Assessment,EXC/001,OP/1001,15,10,150
+Hazard Assessment,EXC/001,OP/1001,7,7,49
+Trench Excavation,EXC/004,OP/1001,16,4,64
+Trench Excavation,EXC/002,OP/1002,20,4,80
+Daily Inspection,EXC/005,OP/1005,18,8,144
+Stockpiling,EXC/002,OP/1004,10,6,60
+Backfilling,EXC/004,OP/1001,18,4,72
+Safety Meeting,EXC/003,OP/1005,6,10,60
+Fueling,EXC/001,OP/1002,16,9,144
+Demolition,EXC/004,OP/1001,20,9,180
+Backfilling,EXC/001,OP/1004,5,7,35
+Hazard Assessment,EXC/005,OP/1005,5,9,45
+Attachment Installation,EXC/002,OP/1005,8,6,48
+Site Grading,EXC/005,OP/1001,17,10,170
+Attachment Installation,EXC/003,OP/1004,16,6,96
+Site Grading,EXC/004,OP/1001,8,10,80
+Trench Excavation,EXC/004,OP/1003,19,4,76
+Backfilling,EXC/004,OP/1002,9,9,81
+Backfilling,EXC/005,OP/1004,10,9,90
+Trench Excavation,EXC/003,OP/1004,15,7,105
+Trench Excavation,EXC/002,OP/1001,14,7,98
+Site Clearing,EXC/003,OP/1003,10,9,90
+Site Clearing,EXC/004,OP/1002,19,7,133
+Hazard Assessment,EXC/001,OP/1005,6,8,48
+Daily Inspection,EXC/004,OP/1005,10,8,80
+Operator Training,EXC/004,OP/1003,14,4,56
+Equipment Transport,EXC/004,OP/1001,13,4,52
+Routine Maintenance,EXC/004,OP/1002,17,7,119
+Backfilling,EXC/001,OP/1002,13,5,65
+Hazard Assessment,EXC/001,OP/1003,19,5,95
+Fueling,EXC/004,OP/1005,6,8,48
+Operator Training,EXC/005,OP/1004,17,4,68
+Routine Maintenance,EXC/001,OP/1002,6,9,54
+Material Loading,EXC/004,OP/1005,11,10,110
+Operator Training,EXC/003,OP/1004,5,8,40
+Attachment Installation,EXC/003,OP/1005,18,4,72
+Equipment Transport,EXC/003,OP/1002,6,10,60
+Safety Meeting,EXC/002,OP/1002,5,10,50
+Routine Maintenance,EXC/002,OP/1001,7,9,63
+Backfilling,EXC/001,OP/1004,14,10,140
+Fueling,EXC/002,OP/1002,15,10,150
+Material Loading,EXC/001,OP/1004,16,4,64
+Equipment Transport,EXC/002,OP/1004,7,10,70
+Backfilling,EXC/005,OP/1004,19,4,76
+Operator Training,EXC/003,OP/1005,8,8,64
+Trench Excavation,EXC/001,OP/1003,14,8,112
+Attachment Installation,EXC/002,OP/1005,10,6,60
+Site Clearing,EXC/004,OP/1003,18,6,108
+Material Loading,EXC/005,OP/1001,13,4,52
+Site Grading,EXC/004,OP/1002,6,9,54
+Daily Inspection,EXC/005,OP/1005,15,9,135
+Material Loading,EXC/004,OP/1002,13,6,78
+Equipment Transport,EXC/005,OP/1004,19,9,171
+Backfilling,EXC/004,OP/1005,14,7,98
+Safety Meeting,EXC/001,OP/1003,9,10,90
+Attachment Installation,EXC/004,OP/1001,18,7,126
+Material Loading,EXC/001,OP/1005,10,6,60
+Daily Inspection,EXC/001,OP/1004,20,8,160
+Safety Meeting,EXC/003,OP/1002,20,10,200
+Operator Training,EXC/004,OP/1004,20,5,100
+Stockpiling,EXC/001,OP/1005,9,4,36
+Fueling,EXC/005,OP/1005,9,7,63
+Attachment Installation,EXC/003,OP/1005,9,6,54
+Site Clearing,EXC/005,OP/1002,13,5,65
+Material Loading,EXC/004,OP/1003,13,9,117
+Operator Training,EXC/002,OP/1005,17,9,153
+Hazard Assessment,EXC/005,OP/1004,9,10,90
+Fueling,EXC/004,OP/1005,20,5,100
+Daily Inspection,EXC/001,OP/1003,18,10,180
+Site Grading,EXC/003,OP/1003,19,4,76
+Operator Training,EXC/005,OP/1005,14,10,140
+Site Clearing,EXC/004,OP/1001,16,6,96
+Fueling,EXC/005,OP/1002,6,4,24
+Material Loading,EXC/005,OP/1001,20,9,180
+Fueling,EXC/005,OP/1002,16,4,64
+Fueling,EXC/005,OP/1004,16,6,96
+Fueling,EXC/004,OP/1001,11,5,55
+Safety Meeting,EXC/005,OP/1003,10,8,80
+Attachment Installation,EXC/003,OP/1003,14,5,70
+Operator Training,EXC/001,OP/1002,13,4,52
+Equipment Transport,EXC/003,OP/1001,18,5,90
+Routine Maintenance,EXC/005,OP/1003,5,10,50
+Operator Training,EXC/005,OP/1002,10,4,40
+Equipment Transport,EXC/005,OP/1004,14,4,56
+Backfilling,EXC/002,OP/1005,13,7,91
+Routine Maintenance,EXC/003,OP/1001,11,8,88
+Equipment Transport,EXC/001,OP/1004,20,8,160
+Site Clearing,EXC/001,OP/1001,14,6,84
+Routine Maintenance,EXC/001,OP/1005,8,10,80
+Routine Maintenance,EXC/002,OP/1002,17,10,170
+Attachment Installation,EXC/001,OP/1005,15,7,105
+Hazard Assessment,EXC/002,OP/1003,17,10,170
+Fueling,EXC/002,OP/1001,5,5,25
+Backfilling,EXC/005,OP/1004,12,7,84
+Stockpiling,EXC/003,OP/1001,12,9,108
+Fueling,EXC/001,OP/1004,7,5,35
+Daily Inspection,EXC/003,OP/1003,17,5,85
+Daily Inspection,EXC/005,OP/1001,10,8,80
+Equipment Transport,EXC/002,OP/1001,14,4,56
+Safety Meeting,EXC/003,OP/1004,8,9,72
+Material Loading,EXC/001,OP/1001,10,7,70
+Site Clearing,EXC/003,OP/1002,12,9,108
+Hazard Assessment,EXC/001,OP/1003,18,9,162
+Safety Meeting,EXC/003,OP/1003,12,10,120
+Demolition,EXC/005,OP/1002,6,5,30
+Backfilling,EXC/004,OP/1002,5,5,25
+Demolition,EXC/005,OP/1003,20,4,80
+Site Grading,EXC/003,OP/1001,11,7,77
+Trench Excavation,EXC/001,OP/1001,8,8,64
+Material Loading,EXC/003,OP/1005,6,4,24
+Stockpiling,EXC/004,OP/1002,6,7,42
+Site Grading,EXC/003,OP/1005,19,8,152
+Equipment Transport,EXC/003,OP/1004,18,6,108
+Stockpiling,EXC/001,OP/1004,9,7,63
+Backfilling,EXC/002,OP/1002,13,9,117
+Daily Inspection,EXC/001,OP/1005,20,8,160
+Hazard Assessment,EXC/001,OP/1003,7,6,42
+Fueling,EXC/005,OP/1001,11,8,88
+Site Clearing,EXC/005,OP/1003,5,5,25
+Equipment Transport,EXC/004,OP/1002,14,5,70
+Operator Training,EXC/003,OP/1004,18,8,144
+Site Grading,EXC/001,OP/1003,11,6,66
+Backfilling,EXC/004,OP/1005,14,7,98
+Daily Inspection,EXC/004,OP/1001,8,9,72
+Site Clearing,EXC/005,OP/1004,14,9,126
+Site Clearing,EXC/004,OP/1003,11,5,55
+Site Grading,EXC/001,OP/1005,17,5,85
+Hazard Assessment,EXC/001,OP/1002,9,4,36
+Daily Inspection,EXC/005,OP/1004,10,10,100
+Routine Maintenance,EXC/003,OP/1005,20,4,80
+Site Grading,EXC/004,OP/1005,15,6,90
+Material Loading,EXC/005,OP/1001,19,5,95
+Backfilling,EXC/003,OP/1003,15,6,90
+Backfilling,EXC/002,OP/1002,7,6,42
+Hazard Assessment,EXC/004,OP/1002,16,5,80
+Demolition,EXC/001,OP/1003,6,4,24
+Hazard Assessment,EXC/005,OP/1005,16,9,144
+Demolition,EXC/002,OP/1003,11,6,66
+Stockpiling,EXC/002,OP/1005,19,5,95
+Fueling,EXC/004,OP/1002,16,4,64
+Attachment Installation,EXC/002,OP/1005,17,7,119
+Hazard Assessment,EXC/003,OP/1004,10,10,100
+Operator Training,EXC/001,OP/1005,6,9,54
+Backfilling,EXC/003,OP/1005,20,6,120
+Safety Meeting,EXC/005,OP/1001,6,8,48
+Material Loading,EXC/005,OP/1003,10,7,70
+Fueling,EXC/002,OP/1004,16,8,128
+Fueling,EXC/005,OP/1003,12,10,120
+Stockpiling,EXC/002,OP/1002,13,7,91
+Trench Excavation,EXC/002,OP/1001,13,5,65
+Daily Inspection,EXC/004,OP/1001,12,7,84
+Attachment Installation,EXC/005,OP/1003,10,8,80
+Equipment Transport,EXC/001,OP/1002,6,8,48
+Operator Training,EXC/002,OP/1003,14,8,112
+Fueling,EXC/003,OP/1005,17,5,85
+Hazard Assessment,EXC/004,OP/1004,6,8,48
+Hazard Assessment,EXC/005,OP/1001,11,6,66
+Site Clearing,EXC/004,OP/1001,12,9,108
+Safety Meeting,EXC/005,OP/1003,16,10,160
+Demolition,EXC/005,OP/1005,13,4,52
+Trench Excavation,EXC/002,OP/1005,16,8,128
+Material Loading,EXC/002,OP/1001,5,9,45
+Routine Maintenance,EXC/003,OP/1003,15,6,90
+Stockpiling,EXC/005,OP/1005,5,6,30
+Safety Meeting,EXC/003,OP/1005,18,7,126
+Hazard Assessment,EXC/001,OP/1004,15,8,120
+Equipment Transport,EXC/001,OP/1001,15,5,75
+Hazard Assessment,EXC/004,OP/1005,17,7,119
+Equipment Transport,EXC/003,OP/1004,8,4,32
+Attachment Installation,EXC/001,OP/1003,7,5,35
+Operator Training,EXC/002,OP/1003,19,4,76
+Stockpiling,EXC/005,OP/1004,20,7,140
+Equipment Transport,EXC/002,OP/1002,19,9,171
+Fueling,EXC/002,OP/1002,13,6,78
+Operator Training,EXC/004,OP/1005,15,10,150
+Stockpiling,EXC/002,OP/1002,8,9,72
+Demolition,EXC/004,OP/1004,18,9,162
+Trench Excavation,EXC/005,OP/1002,17,9,153
+Equipment Transport,EXC/005,OP/1003,9,9,81
+Operator Training,EXC/002,OP/1002,19,8,152
+Routine Maintenance,EXC/002,OP/1005,10,7,70
+Site Clearing,EXC/003,OP/1002,20,4,80
+Demolition,EXC/002,OP/1003,16,10,160
+Stockpiling,EXC/005,OP/1001,11,5,55
+Hazard Assessment,EXC/005,OP/1004,7,10,70
+Trench Excavation,EXC/005,OP/1003,15,8,120
+Attachment Installation,EXC/003,OP/1005,9,5,45
+Attachment Installation,EXC/003,OP/1001,8,5,40
+Hazard Assessment,EXC/003,OP/1002,9,7,63
+Daily Inspection,EXC/001,OP/1001,18,9,162
+Material Loading,EXC/001,OP/1004,7,8,56
+Daily Inspection,EXC/001,OP/1004,8,10,80
+Demolition,EXC/005,OP/1004,8,6,48
+Demolition,EXC/004,OP/1004,11,4,44
+Backfilling,EXC/002,OP/1005,17,6,102
+Site Grading,EXC/003,OP/1001,12,10,120
+Equipment Transport,EXC/002,OP/1005,7,10,70
+Operator Training,EXC/002,OP/1002,17,10,170
+Stockpiling,EXC/005,OP/1002,9,5,45
+Daily Inspection,EXC/003,OP/1003,18,4,72
+Backfilling,EXC/004,OP/1001,13,5,65
+Attachment Installation,EXC/004,OP/1005,12,9,108
+Site Clearing,EXC/005,OP/1002,20,8,160
+Hazard Assessment,EXC/001,OP/1002,16,8,128
+Trench Excavation,EXC/001,OP/1005,20,5,100
+Safety Meeting,EXC/003,OP/1002,20,6,120
+Site Clearing,EXC/005,OP/1002,20,5,100
+Hazard Assessment,EXC/002,OP/1001,13,4,52
+Hazard Assessment,EXC/003,OP/1001,11,5,55
+Trench Excavation,EXC/005,OP/1004,20,4,80
+Equipment Transport,EXC/004,OP/1004,16,8,128
+Material Loading,EXC/004,OP/1003,12,5,60
+Safety Meeting,EXC/001,OP/1004,14,6,84
+Fueling,EXC/003,OP/1002,16,4,64
+Daily Inspection,EXC/001,OP/1004,19,4,76
+Operator Training,EXC/002,OP/1002,18,7,126
+Stockpiling,EXC/003,OP/1003,15,5,75
+Equipment Transport,EXC/003,OP/1002,6,5,30
+Fueling,EXC/002,OP/1005,19,6,114
+Site Clearing,EXC/003,OP/1001,13,6,78
+Backfilling,EXC/003,OP/1003,20,4,80
+Trench Excavation,EXC/005,OP/1005,6,8,48
+Attachment Installation,EXC/001,OP/1005,6,10,60
+Hazard Assessment,EXC/003,OP/1003,18,7,126
+Equipment Transport,EXC/001,OP/1001,17,10,170
+Fueling,EXC/005,OP/1001,5,4,20
+Operator Training,EXC/001,OP/1001,19,6,114
+Material Loading,EXC/004,OP/1003,11,4,44
+Hazard Assessment,EXC/003,OP/1004,10,10,100
+Hazard Assessment,EXC/005,OP/1001,19,7,133
+Attachment Installation,EXC/004,OP/1003,18,7,126
+Safety Meeting,EXC/003,OP/1005,10,10,100
+Backfilling,EXC/002,OP/1003,5,8,40
+Site Grading,EXC/005,OP/1003,13,10,130
+Backfilling,EXC/003,OP/1004,14,5,70
+Backfilling,EXC/003,OP/1005,19,6,114
+Equipment Transport,EXC/001,OP/1003,6,9,54
+Fueling,EXC/004,OP/1001,19,9,171
+Stockpiling,EXC/001,OP/1001,15,7,105
+Hazard Assessment,EXC/002,OP/1003,9,6,54
+Demolition,EXC/001,OP/1003,15,8,120
+Daily Inspection,EXC/005,OP/1001,5,5,25
+Routine Maintenance,EXC/004,OP/1004,6,5,30
+Site Grading,EXC/002,OP/1002,7,4,28
+Trench Excavation,EXC/004,OP/1004,5,4,20
+Routine Maintenance,EXC/004,OP/1002,5,6,30
+Material Loading,EXC/005,OP/1003,19,8,152
+Stockpiling,EXC/001,OP/1005,5,6,30
+Fueling,EXC/001,OP/1002,8,5,40
+Operator Training,EXC/002,OP/1005,15,9,135
+Material Loading,EXC/005,OP/1002,15,10,150
+Operator Training,EXC/002,OP/1005,14,5,70
+Demolition,EXC/002,OP/1003,17,7,119
+Site Clearing,EXC/002,OP/1002,12,5,60
+Equipment Transport,EXC/004,OP/1005,18,6,108
+Routine Maintenance,EXC/002,OP/1004,18,6,108
+Site Grading,EXC/005,OP/1003,7,10,70
+Site Grading,EXC/001,OP/1003,11,6,66
+Material Loading,EXC/003,OP/1002,15,9,135
+Stockpiling,EXC/004,OP/1004,11,5,55
+Demolition,EXC/005,OP/1003,11,10,110
+Trench Excavation,EXC/004,OP/1003,16,5,80
+Routine Maintenance,EXC/003,OP/1005,7,9,63
+Demolition,EXC/005,OP/1005,7,4,28
+Attachment Installation,EXC/002,OP/1003,10,6,60
+Backfilling,EXC/002,OP/1005,9,7,63
+Attachment Installation,EXC/002,OP/1003,14,4,56
+Hazard Assessment,EXC/004,OP/1005,13,5,65
+Operator Training,EXC/001,OP/1003,10,10,100
+Operator Training,EXC/002,OP/1001,12,8,96
+Fueling,EXC/003,OP/1005,16,6,96
+Hazard Assessment,EXC/001,OP/1002,19,6,114
+Equipment Transport,EXC/001,OP/1001,7,7,49
+Attachment Installation,EXC/002,OP/1001,14,9,126
+Material Loading,EXC/002,OP/1004,12,5,60
+Material Loading,EXC/003,OP/1003,12,10,120
+Material Loading,EXC/001,OP/1005,11,9,99
+Fueling,EXC/002,OP/1004,9,4,36
+Attachment Installation,EXC/001,OP/1005,15,10,150
+Demolition,EXC/004,OP/1005,5,6,30
+Daily Inspection,EXC/003,OP/1002,19,8,152
+Routine Maintenance,EXC/004,OP/1003,17,8,136
+Material Loading,EXC/003,OP/1005,15,5,75
+Site Clearing,EXC/004,OP/1005,7,7,49
+Equipment Transport,EXC/001,OP/1003,11,4,44
+Stockpiling,EXC/004,OP/1004,6,10,60
+Material Loading,EXC/001,OP/1003,5,10,50
+Safety Meeting,EXC/002,OP/1001,20,10,200
+Operator Training,EXC/003,OP/1002,19,10,190
+Material Loading,EXC/005,OP/1005,11,9,99
+Stockpiling,EXC/003,OP/1002,15,9,135
+Site Clearing,EXC/003,OP/1004,8,10,80
+Attachment Installation,EXC/001,OP/1004,7,6,42
+Daily Inspection,EXC/001,OP/1002,20,10,200
+Safety Meeting,EXC/004,OP/1002,8,4,32
+Equipment Transport,EXC/002,OP/1005,14,8,112
+Backfilling,EXC/003,OP/1001,14,4,56
+Site Grading,EXC/005,OP/1003,5,5,25
+Stockpiling,EXC/003,OP/1002,6,10,60
+Operator Training,EXC/002,OP/1004,6,10,60
+Operator Training,EXC/005,OP/1004,11,6,66
+Fueling,EXC/003,OP/1005,17,10,170
+Trench Excavation,EXC/004,OP/1001,8,8,64
+Attachment Installation,EXC/004,OP/1005,14,9,126
+Demolition,EXC/004,OP/1002,13,4,52
+Daily Inspection,EXC/003,OP/1001,19,10,190
+Operator Training,EXC/004,OP/1001,15,4,60
+Attachment Installation,EXC/001,OP/1003,5,4,20
+Site Clearing,EXC/004,OP/1005,16,10,160
+Stockpiling,EXC/005,OP/1005,11,8,88
+Stockpiling,EXC/002,OP/1004,17,4,68
+Site Grading,EXC/001,OP/1003,7,7,49
+Routine Maintenance,EXC/001,OP/1001,12,5,60
+Daily Inspection,EXC/002,OP/1001,15,8,120
+Material Loading,EXC/002,OP/1003,10,9,90
+Routine Maintenance,EXC/005,OP/1001,9,7,63
+Site Clearing,EXC/002,OP/1005,5,10,50
+Trench Excavation,EXC/004,OP/1001,7,4,28
+Site Grading,EXC/001,OP/1002,17,8,136
+Attachment Installation,EXC/003,OP/1004,14,10,140
+Routine Maintenance,EXC/004,OP/1001,9,6,54
+Stockpiling,EXC/004,OP/1002,18,5,90
+Material Loading,EXC/004,OP/1001,14,4,56
+Operator Training,EXC/005,OP/1001,6,7,42
+Demolition,EXC/001,OP/1005,5,9,45
+Equipment Transport,EXC/002,OP/1003,9,8,72
+Material Loading,EXC/003,OP/1005,11,9,99
+Daily Inspection,EXC/001,OP/1002,5,8,40
+Demolition,EXC/004,OP/1005,5,8,40
+Site Grading,EXC/003,OP/1001,10,10,100
+Stockpiling,EXC/003,OP/1005,6,4,24
+Routine Maintenance,EXC/004,OP/1002,15,8,120
+Hazard Assessment,EXC/002,OP/1004,16,8,128
+Operator Training,EXC/002,OP/1002,15,4,60
+Safety Meeting,EXC/003,OP/1002,8,7,56
+Attachment Installation,EXC/002,OP/1003,7,5,35
+Attachment Installation,EXC/003,OP/1005,14,8,112
+Site Clearing,EXC/002,OP/1002,16,8,128
+Fueling,EXC/005,OP/1002,7,9,63
+Hazard Assessment,EXC/003,OP/1004,19,9,171
+Fueling,EXC/004,OP/1004,19,6,114
+Operator Training,EXC/002,OP/1003,8,7,56
+Attachment Installation,EXC/003,OP/1005,9,10,90
+Trench Excavation,EXC/004,OP/1005,16,4,64
+Site Grading,EXC/005,OP/1002,19,9,171
+Site Clearing,EXC/003,OP/1005,20,4,80
+Equipment Transport,EXC/004,OP/1002,13,4,52
+Routine Maintenance,EXC/005,OP/1001,15,9,135
+Safety Meeting,EXC/001,OP/1003,17,8,136
+Daily Inspection,EXC/005,OP/1004,19,9,171
+Site Grading,EXC/001,OP/1005,16,6,96
+Routine Maintenance,EXC/005,OP/1005,17,6,102
+Material Loading,EXC/004,OP/1004,17,9,153
+Equipment Transport,EXC/001,OP/1005,8,9,72
+Stockpiling,EXC/001,OP/1002,7,6,42
+Hazard Assessment,EXC/002,OP/1002,10,5,50
+Safety Meeting,EXC/005,OP/1003,12,4,48
+Daily Inspection,EXC/003,OP/1002,15,5,75
+Routine Maintenance,EXC/002,OP/1003,14,10,140
+Stockpiling,EXC/003,OP/1001,8,5,40
+Routine Maintenance,EXC/001,OP/1005,20,4,80
+Site Clearing,EXC/005,OP/1005,6,8,48
+Daily Inspection,EXC/003,OP/1003,7,10,70
+Demolition,EXC/004,OP/1004,12,8,96
+Demolition,EXC/005,OP/1002,13,7,91
+Stockpiling,EXC/001,OP/1005,12,6,72
+Fueling,EXC/004,OP/1005,11,6,66
+Stockpiling,EXC/001,OP/1004,17,10,170
+Fueling,EXC/004,OP/1003,16,8,128
+Hazard Assessment,EXC/003,OP/1004,8,4,32
+Equipment Transport,EXC/003,OP/1004,7,10,70
+Site Clearing,EXC/003,OP/1003,10,5,50
+Site Clearing,EXC/002,OP/1004,20,10,200
+Daily Inspection,EXC/003,OP/1003,17,9,153
+Attachment Installation,EXC/002,OP/1001,9,8,72
+Attachment Installation,EXC/004,OP/1004,12,6,72
+Trench Excavation,EXC/002,OP/1003,9,6,54
+Site Clearing,EXC/003,OP/1003,8,5,40
+Stockpiling,EXC/004,OP/1003,10,7,70
+Site Clearing,EXC/003,OP/1002,15,6,90
+Attachment Installation,EXC/001,OP/1004,9,10,90
+Stockpiling,EXC/005,OP/1005,19,6,114
+Operator Training,EXC/003,OP/1005,10,4,40
+Routine Maintenance,EXC/004,OP/1005,6,7,42
+Material Loading,EXC/003,OP/1003,18,8,144
+Site Grading,EXC/003,OP/1005,5,5,25
+Trench Excavation,EXC/004,OP/1002,6,9,54
+Fueling,EXC/002,OP/1002,13,4,52
+Site Clearing,EXC/002,OP/1004,12,9,108
+Safety Meeting,EXC/003,OP/1002,17,7,119
+Safety Meeting,EXC/005,OP/1001,16,7,112
+Attachment Installation,EXC/005,OP/1005,11,10,110
+Demolition,EXC/005,OP/1004,11,6,66
+Backfilling,EXC/003,OP/1004,11,6,66
+Site Grading,EXC/001,OP/1001,12,10,120
+Material Loading,EXC/003,OP/1003,15,6,90
+Material Loading,EXC/004,OP/1004,13,7,91
+Routine Maintenance,EXC/005,OP/1004,15,8,120
+Daily Inspection,EXC/003,OP/1003,9,5,45
+Material Loading,EXC/004,OP/1003,12,8,96
+Demolition,EXC/004,OP/1004,20,6,120
+Fueling,EXC/005,OP/1003,18,5,90
+Fueling,EXC/003,OP/1002,17,9,153
+Routine Maintenance,EXC/004,OP/1004,6,6,36
+Operator Training,EXC/002,OP/1004,12,9,108
+Fueling,EXC/003,OP/1001,19,8,152
+Site Grading,EXC/002,OP/1004,9,7,63
+Safety Meeting,EXC/003,OP/1002,8,6,48
+Fueling,EXC/005,OP/1001,7,4,28
+Daily Inspection,EXC/002,OP/1001,8,5,40
+Equipment Transport,EXC/004,OP/1004,7,7,49
+Safety Meeting,EXC/002,OP/1004,13,10,130
+Fueling,EXC/002,OP/1002,8,5,40
+Trench Excavation,EXC/002,OP/1001,19,6,114
+Demolition,EXC/005,OP/1003,17,7,119
+Site Clearing,EXC/004,OP/1002,8,10,80
+Site Clearing,EXC/003,OP/1004,16,10,160
+Equipment Transport,EXC/005,OP/1003,8,5,40
+Demolition,EXC/001,OP/1005,14,4,56
+Material Loading,EXC/003,OP/1005,6,7,42
+Site Clearing,EXC/001,OP/1004,12,10,120
+Hazard Assessment,EXC/003,OP/1001,6,9,54
+Hazard Assessment,EXC/005,OP/1001,15,5,75
+Safety Meeting,EXC/005,OP/1003,12,8,96
+Operator Training,EXC/002,OP/1004,12,5,60
+Stockpiling,EXC/001,OP/1004,18,9,162
+Site Clearing,EXC/002,OP/1002,12,5,60
+Site Clearing,EXC/004,OP/1002,9,4,36
+Trench Excavation,EXC/003,OP/1004,19,6,114
+Stockpiling,EXC/002,OP/1002,19,10,190
+Trench Excavation,EXC/005,OP/1005,18,5,90
+Operator Training,EXC/001,OP/1002,12,5,60
+Operator Training,EXC/002,OP/1003,19,10,190
+Fueling,EXC/001,OP/1005,15,5,75
+Demolition,EXC/004,OP/1003,19,9,171
+Equipment Transport,EXC/001,OP/1005,10,10,100
+Operator Training,EXC/003,OP/1005,11,7,77
+Site Clearing,EXC/004,OP/1001,8,7,56
+Trench Excavation,EXC/001,OP/1001,16,4,64
+Operator Training,EXC/002,OP/1005,14,7,98
+Hazard Assessment,EXC/005,OP/1001,5,4,20
+Hazard Assessment,EXC/004,OP/1004,7,6,42
+Safety Meeting,EXC/001,OP/1001,7,9,63
+Demolition,EXC/005,OP/1001,20,9,180
+Site Grading,EXC/003,OP/1002,8,10,80
+Equipment Transport,EXC/003,OP/1004,7,9,63
+Attachment Installation,EXC/002,OP/1005,14,8,112
+Trench Excavation,EXC/003,OP/1005,19,7,133
+Routine Maintenance,EXC/004,OP/1005,10,4,40
+Safety Meeting,EXC/005,OP/1003,7,8,56
+Site Clearing,EXC/004,OP/1001,13,6,78
+Hazard Assessment,EXC/005,OP/1004,12,5,60
+Routine Maintenance,EXC/005,OP/1004,15,8,120
+Routine Maintenance,EXC/001,OP/1002,5,6,30
+Site Grading,EXC/002,OP/1003,19,4,76
+Stockpiling,EXC/002,OP/1002,20,4,80
+Attachment Installation,EXC/002,OP/1001,6,6,36
+Hazard Assessment,EXC/002,OP/1002,18,7,126
+Fueling,EXC/005,OP/1002,19,10,190
+Daily Inspection,EXC/005,OP/1005,14,9,126
+Equipment Transport,EXC/004,OP/1005,13,8,104
+Hazard Assessment,EXC/003,OP/1001,20,10,200
+Safety Meeting,EXC/005,OP/1004,9,5,45
+Demolition,EXC/001,OP/1005,5,7,35
+Attachment Installation,EXC/001,OP/1003,17,10,170
+Trench Excavation,EXC/004,OP/1004,13,4,52
+Hazard Assessment,EXC/004,OP/1001,19,10,190
+Hazard Assessment,EXC/001,OP/1005,8,7,56
+Safety Meeting,EXC/005,OP/1004,7,9,63
+Site Grading,EXC/002,OP/1005,14,10,140
+Site Clearing,EXC/002,OP/1004,13,7,91
+Trench Excavation,EXC/005,OP/1004,17,4,68
+Material Loading,EXC/002,OP/1005,6,8,48
+Daily Inspection,EXC/001,OP/1002,16,9,144
+Stockpiling,EXC/001,OP/1005,6,7,42
+Trench Excavation,EXC/002,OP/1005,7,5,35
+Stockpiling,EXC/005,OP/1003,8,8,64
+Trench Excavation,EXC/005,OP/1002,9,8,72
+Site Grading,EXC/004,OP/1002,11,8,88
+Routine Maintenance,EXC/002,OP/1004,8,9,72
+Site Grading,EXC/003,OP/1004,19,7,133
+Trench Excavation,EXC/002,OP/1005,7,6,42
+Operator Training,EXC/005,OP/1005,18,4,72
+Operator Training,EXC/004,OP/1004,15,9,135
+Trench Excavation,EXC/003,OP/1003,15,10,150
+Equipment Transport,EXC/002,OP/1004,16,4,64
+Operator Training,EXC/005,OP/1005,7,4,28
+Operator Training,EXC/004,OP/1002,20,8,160
+Safety Meeting,EXC/003,OP/1004,8,7,56
+Hazard Assessment,EXC/001,OP/1005,5,10,50
+Equipment Transport,EXC/003,OP/1005,7,9,63
+Site Grading,EXC/002,OP/1003,15,9,135
+Material Loading,EXC/001,OP/1004,19,10,190
+Demolition,EXC/001,OP/1005,12,4,48
+Material Loading,EXC/004,OP/1004,14,6,84
+Attachment Installation,EXC/002,OP/1005,5,4,20
+Trench Excavation,EXC/003,OP/1005,11,6,66
+Attachment Installation,EXC/002,OP/1005,15,8,120
+Attachment Installation,EXC/002,OP/1005,20,4,80
+Equipment Transport,EXC/003,OP/1002,14,7,98
+Operator Training,EXC/004,OP/1002,11,9,99
+Demolition,EXC/005,OP/1002,17,7,119
+Fueling,EXC/004,OP/1004,7,8,56
+Safety Meeting,EXC/002,OP/1005,16,4,64
+Site Clearing,EXC/004,OP/1005,6,6,36
+Stockpiling,EXC/001,OP/1001,12,8,96
+Fueling,EXC/004,OP/1002,19,5,95
+Attachment Installation,EXC/001,OP/1002,9,10,90
+Fueling,EXC/001,OP/1002,7,10,70
+Equipment Transport,EXC/001,OP/1001,8,7,56
+Site Grading,EXC/003,OP/1001,17,4,68
+Site Grading,EXC/001,OP/1002,18,7,126
+Demolition,EXC/004,OP/1003,14,7,98
+Daily Inspection,EXC/002,OP/1001,20,7,140
+Demolition,EXC/005,OP/1003,7,9,63
+Trench Excavation,EXC/002,OP/1003,10,8,80
+Demolition,EXC/002,OP/1002,20,8,160
+Equipment Transport,EXC/002,OP/1003,10,9,90
+Trench Excavation,EXC/005,OP/1001,13,4,52
+Daily Inspection,EXC/002,OP/1005,14,7,98
+Site Clearing,EXC/004,OP/1001,12,8,96
+Equipment Transport,EXC/004,OP/1001,7,6,42
+Demolition,EXC/001,OP/1005,8,4,32
+Operator Training,EXC/005,OP/1002,8,8,64
+Material Loading,EXC/005,OP/1002,6,5,30
+Fueling,EXC/003,OP/1005,17,8,136
+Site Clearing,EXC/003,OP/1003,12,6,72
+Daily Inspection,EXC/003,OP/1004,11,7,77
+Daily Inspection,EXC/001,OP/1001,19,9,171
+Stockpiling,EXC/005,OP/1002,12,6,72
+Site Grading,EXC/002,OP/1002,9,8,72
+Routine Maintenance,EXC/003,OP/1002,17,10,170
+Demolition,EXC/002,OP/1005,18,5,90
+Stockpiling,EXC/003,OP/1001,17,5,85
+Trench Excavation,EXC/004,OP/1002,7,7,49
+Backfilling,EXC/004,OP/1002,14,8,112
+Equipment Transport,EXC/002,OP/1003,8,7,56
+Safety Meeting,EXC/001,OP/1001,5,7,35
+Trench Excavation,EXC/002,OP/1002,11,5,55
+Material Loading,EXC/001,OP/1001,5,4,20
+Site Clearing,EXC/005,OP/1005,16,6,96
+Site Clearing,EXC/005,OP/1003,11,7,77
+Trench Excavation,EXC/002,OP/1002,15,6,90
+Operator Training,EXC/001,OP/1001,10,8,80
+Backfilling,EXC/001,OP/1005,14,6,84
+Backfilling,EXC/002,OP/1005,10,8,80
+Backfilling,EXC/001,OP/1004,7,5,35
+Material Loading,EXC/001,OP/1004,17,9,153
+Attachment Installation,EXC/004,OP/1003,8,8,64
+Fueling,EXC/003,OP/1002,12,8,96
+Demolition,EXC/005,OP/1004,18,7,126
+Site Clearing,EXC/005,OP/1001,7,4,28
+Safety Meeting,EXC/003,OP/1002,6,7,42
+Routine Maintenance,EXC/005,OP/1001,17,4,68
+Routine Maintenance,EXC/005,OP/1001,17,7,119
+Daily Inspection,EXC/002,OP/1004,12,9,108
+Operator Training,EXC/005,OP/1004,7,8,56
