@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import VoiceAssistantFloating from '../components/VoiceAssistantFloating';
 import { 
   PlusIcon, 
   MagnifyingGlassIcon, 
@@ -770,6 +771,8 @@ const Tasks = () => {
           }}
         />
       )}
+      {/* Voice Assistant - Floating Icon */}
+      <VoiceAssistantFloating />
     </div>
   );
 };
