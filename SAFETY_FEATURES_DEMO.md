@@ -12,13 +12,13 @@ const SAFETY_ZONES = {
   bulldozer: 12,      // 12-meter safety radius  
   truck: 8,           // 8-meter safety radius
   loader: 10          // 10-meter safety radius
-};
+};aaaaaaa
 
 // Real-time proximity monitoring
 function checkSafetyProximity(operators: Operator[], machines: Machine[]) {
   operators.forEach(operator => {
     machines.forEach(machine => {
-      if (machine.status === 'active') {
+        if (machine.status === 'active') {
         const distance = calculateDistance(
           operator.currentLocation, 
           machine.locationCoordinates

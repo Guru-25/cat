@@ -14,9 +14,9 @@ const Navbar = () => {
   const navigation = [
     { name: 'Dashboard', href: '/dashboard', icon: ChartBarIcon },
     { name: 'Tasks', href: '/tasks', icon: ClipboardDocumentListIcon },
-    { name: 'Operators', href: '/operators', icon: UserGroupIcon },
-    { name: 'Machines', href: '/machines', icon: TruckIcon },
-    { name: 'Safety', href: '/safety', icon: ShieldExclamationIcon },
+    // { name: 'Operators', href: '/operators', icon: UserGroupIcon },
+    { name: 'Machines & Safety', href: '/machines', icon: TruckIcon },
+    // { name: 'Safety', href: '/safety', icon: ShieldExclamationIcon },
     { name: 'E-Learning', href: '/elearning', icon: AcademicCapIcon },
   ];
 
