@@ -10,6 +10,8 @@ import {
   calculateDistance,
   updateOperatorLocation,
   updateMachineLocation,
+  updateMachineSeatbelt,
+  canMachineStart,
   initializeMockData,
   Machine, 
   Operator, 
@@ -157,6 +159,17 @@ const Machines: React.FC = () => {
     loadData();
     
     alert('Location data has been reset with the latest structure!');
+  };
+
+  const handleSeatbeltToggle = (machineId: number, currentStatus: boolean) => {
+    updateMachineSeatbelt(machineId, !currentStatus);
+    loadData(); // Refresh data
+    
+    if (currentStatus) {
+      alert('⚠️ SAFETY WARNING: Seatbelt has been unfastened! Machine will not start until seatbelt is secured.');
+    } else {
+      alert('✅ SAFETY: Seatbelt secured. Machine is now ready to start.');
+    }
   };
 
   return (
@@ -329,13 +342,52 @@ const Machines: React.FC = () => {
                       </div>
                       {machine.operator && (
                         <div className="flex items-center justify-between">
-                          <span>Operator:</span>
+                          <span>👤 Operator:</span>
                           <span className="font-medium">{machine.operator}</span>
                         </div>
                       )}
+                      
+                      {/* Seatbelt Safety Status */}
+                      <div className="flex items-center justify-between">
+                        <span className="flex items-center">
+                          <span className="mr-1">{machine.seatbelt ? '🔒' : '⚠️'}</span>
+                          Seatbelt:
+                        </span>
+                        <div className="flex items-center space-x-2">
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            machine.seatbelt 
+                              ? 'bg-green-100 text-green-800' 
+                              : 'bg-red-100 text-red-800'
+                          }`}>
+                            {machine.seatbelt ? 'SECURED' : 'NOT SECURED'}
+                          </span>
+                          <button
+                            onClick={() => handleSeatbeltToggle(machine.id, machine.seatbelt)}
+                            className={`px-2 py-1 rounded text-xs font-medium transition-colors ${
+                              machine.seatbelt 
+                                ? 'bg-orange-500 text-white hover:bg-orange-600' 
+                                : 'bg-green-500 text-white hover:bg-green-600'
+                            }`}
+                            title={machine.seatbelt ? 'Click to unfasten seatbelt' : 'Click to fasten seatbelt'}
+                          >
+                            {machine.seatbelt ? 'Unfasten' : 'Fasten'}
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Safety Alert */}
+                      {!machine.seatbelt && (
+                        <div className="flex items-center justify-between bg-red-50 border border-red-200 rounded p-2 text-red-800">
+                          <span className="flex items-center text-sm">
+                            <span className="mr-1">🚨</span>
+                            <strong>SAFETY ALERT: Machine will not start!</strong>
+                          </span>
+                        </div>
+                      )}
+                      
                       {machine.locationCoordinates && (
                         <div className="flex items-center justify-between text-xs text-gray-500">
-                          <span>Coordinates:</span>
+                          <span>📍 Coordinates:</span>
                           <span>({machine.locationCoordinates.x}, {machine.locationCoordinates.y})</span>
                         </div>
                       )}

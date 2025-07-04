@@ -76,6 +76,7 @@ export interface Machine {
   lastMaintenance: string;
   nextMaintenance: string;
   lastLocationUpdate?: string;
+  seatbelt: boolean; // Safety: true if seatbelt is fastened, false if not
 }
 
 export interface SafetyIncident {
@@ -264,7 +265,8 @@ export const mockMachines: Machine[] = [
     locationCoordinates: { x: 100, y: 200, zone: 'north' },
     lastMaintenance: '2024-01-15',
     nextMaintenance: '2024-02-15',
-    lastLocationUpdate: new Date().toISOString()
+    lastLocationUpdate: new Date().toISOString(),
+    seatbelt: true
   },
   {
     id: 2,
@@ -279,7 +281,8 @@ export const mockMachines: Machine[] = [
     locationCoordinates: { x: 300, y: 150, zone: 'east' },
     lastMaintenance: '2024-01-10',
     nextMaintenance: '2024-02-10',
-    lastLocationUpdate: new Date().toISOString()
+    lastLocationUpdate: new Date().toISOString(),
+    seatbelt: false
   },
   {
     id: 3,
@@ -294,7 +297,8 @@ export const mockMachines: Machine[] = [
     locationCoordinates: { x: 350, y: 400, zone: 'south' },
     lastMaintenance: '2024-01-20',
     nextMaintenance: '2024-02-20',
-    lastLocationUpdate: new Date().toISOString()
+    lastLocationUpdate: new Date().toISOString(),
+    seatbelt: true
   },
   {
     id: 4,
@@ -308,7 +312,8 @@ export const mockMachines: Machine[] = [
     locationCoordinates: { x: 150, y: 400, zone: 'south' },
     lastMaintenance: '2024-01-28',
     nextMaintenance: '2024-02-28',
-    lastLocationUpdate: new Date().toISOString()
+    lastLocationUpdate: new Date().toISOString(),
+    seatbelt: false
   }
 ];
 
@@ -428,6 +433,41 @@ export const updateMachineLocation = (machineId: number, newLocation: Coordinate
       : machine
   );
   localStorage.setItem('machines', JSON.stringify(updatedMachines));
+};
+
+// Update machine seatbelt status
+export const updateMachineSeatbelt = (machineId: number, seatbeltStatus: boolean): void => {
+  const machines = getMachines();
+  const updatedMachines = machines.map(machine => 
+    machine.id === machineId 
+      ? { ...machine, seatbelt: seatbeltStatus, lastLocationUpdate: new Date().toISOString() }
+      : machine
+  );
+  localStorage.setItem('machines', JSON.stringify(updatedMachines));
+};
+
+// Safety validation - Check if machine can start
+export const canMachineStart = (machineId: number): { canStart: boolean; reason?: string } => {
+  const machines = getMachines();
+  const machine = machines.find(m => m.id === machineId);
+  
+  if (!machine) {
+    return { canStart: false, reason: 'Machine not found' };
+  }
+  
+  if (!machine.seatbelt) {
+    return { canStart: false, reason: 'Seatbelt not secured - Machine will not start' };
+  }
+  
+  if (machine.status === 'maintenance') {
+    return { canStart: false, reason: 'Machine under maintenance' };
+  }
+  
+  if (machine.fuelLevel < 10) {
+    return { canStart: false, reason: 'Fuel level too low' };
+  }
+  
+  return { canStart: true };
 };
 
 // Time Estimation Utility - Simulates Flask API call
