@@ -11,7 +11,7 @@
 
 ### **Demo Data Preparation**
 - [ ] Navigate to Machines page
-- [ ] Click "🔄 Reset Data" button
+- [ ] Click " Reset Data" button
 - [ ] Verify all operators, machines, and locations load
 - [ ] Test operator selection dropdown
 - [ ] Confirm no console errors

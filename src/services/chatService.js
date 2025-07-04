@@ -59,7 +59,7 @@ Be friendly, helpful, and focused on operator safety and equipment knowledge.`;
     const response = await result.response;
     const text = response.text();
     
-    console.log('✅ Gemini response received');
+    console.log(' Gemini response received');
     
     return {
       success: true,

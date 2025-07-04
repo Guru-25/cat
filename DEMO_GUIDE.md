@@ -13,7 +13,7 @@ This demonstration showcases the **Location Simulation Features** that enable re
 1.  Ensure development server is running (`npm run dev`)
 2.  Open app in browser (`http://localhost:5176`)
 3.  Navigate to **"Machines"** page
-4.  Click **"🔄 Reset Data"** button to load latest location schema
+4.  Click **" Reset Data"** button to load latest location schema
 5.  Verify all components load without errors
 
 ---
@@ -162,7 +162,7 @@ This demonstration showcases the **Location Simulation Features** that enable re
 ### **9. Data Management & Edge Cases (30 seconds)**
 
 **Reset Data Functionality:**
-1. **Click "🔄 Reset Data" button**
+1. **Click " Reset Data" button**
    -  Clears old localStorage data
    -  Loads fresh data with complete location schema
    -  Handles data migration seamlessly

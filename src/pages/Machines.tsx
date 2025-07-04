@@ -166,9 +166,9 @@ const Machines: React.FC = () => {
     loadData(); // Refresh data
     
     if (currentStatus) {
-      alert('⚠️ SAFETY WARNING: Seatbelt has been unfastened! Machine will not start until seatbelt is secured.');
+      alert(' SAFETY WARNING: Seatbelt has been unfastened! Machine will not start until seatbelt is secured.');
     } else {
-      alert('✅ SAFETY: Seatbelt secured. Machine is now ready to start.');
+      alert(' SAFETY: Seatbelt secured. Machine is now ready to start.');
     }
   };
 
@@ -268,7 +268,7 @@ const Machines: React.FC = () => {
                 onClick={resetLocationData}
                 className="w-full bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 mb-1"
               >
-                🔄 Reset Data
+                 Reset Data
               </button>
               {/* <button
                 onClick={triggerSafetyDemo}
@@ -350,7 +350,7 @@ const Machines: React.FC = () => {
                       {/* Seatbelt Safety Status */}
                       <div className="flex items-center justify-between">
                         <span className="flex items-center">
-                          <span className="mr-1">{machine.seatbelt ? '🔒' : '⚠️'}</span>
+                          <span className="mr-1">{machine.seatbelt ? '' : ''}</span>
                           Seatbelt:
                         </span>
                         <div className="flex items-center space-x-2">
@@ -379,7 +379,7 @@ const Machines: React.FC = () => {
                       {!machine.seatbelt && (
                         <div className="flex items-center justify-between bg-red-50 border border-red-200 rounded p-2 text-red-800">
                           <span className="flex items-center text-sm">
-                            <span className="mr-1">🚨</span>
+                            <span className="mr-1"></span>
                             <strong>SAFETY ALERT: Machine will not start!</strong>
                           </span>
                         </div>
@@ -387,7 +387,7 @@ const Machines: React.FC = () => {
                       
                       {machine.locationCoordinates && (
                         <div className="flex items-center justify-between text-xs text-gray-500">
-                          <span>📍 Coordinates:</span>
+                          <span> Coordinates:</span>
                           <span>({machine.locationCoordinates.x}, {machine.locationCoordinates.y})</span>
                         </div>
                       )}
