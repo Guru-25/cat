@@ -16,7 +16,7 @@ export const chatWithVideo = async (transcribedText, userMessage, chatHistory = 
     console.log('🤖 Starting chat with Gemini...');
     
     // Get the generative model
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     
     // Build context prompt with transcribed video content
     const systemPrompt = `You are an AI assistant helping users understand a CAT equipment training video. 
@@ -46,7 +46,7 @@ Be helpful, accurate, and focus on safety and proper equipment operation procedu
     const response = await result.response;
     const text = response.text();
     
-    console.log('✅ Gemini response received');
+    console.log(' Gemini response received');
     
     return {
       success: true,

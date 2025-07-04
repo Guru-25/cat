@@ -10,8 +10,8 @@ localStorage.clear();
 const demoOperators = [
   {
     id: 1,
-    name: 'John Smith',
-    email: 'john.smith@company.com',
+    name: 'Gururaja',
+    email: 'mail@gururaja.in',
     role: 'operator',
     shift: 'day',
     status: 'active',
@@ -24,7 +24,7 @@ const demoOperators = [
   },
   {
     id: 2,
-    name: 'Sarah Johnson',
+    name: 'Akash',
     email: 'sarah.johnson@company.com',
     role: 'operator',
     shift: 'day',
@@ -38,7 +38,7 @@ const demoOperators = [
   },
   {
     id: 3,
-    name: 'Mike Wilson',
+    name: 'Santhosh',
     email: 'mike.wilson@company.com',
     role: 'operator',
     shift: 'day',
@@ -52,7 +52,7 @@ const demoOperators = [
   },
   {
     id: 4,
-    name: 'Lisa Chen',
+    name: 'Aananthi',
     email: 'lisa.chen@company.com',
     role: 'supervisor',
     shift: 'day',
@@ -70,7 +70,7 @@ const demoTasks = [
     id: 1,
     title: 'Excavate Foundation Site A',
     description: 'Dig foundation for new building structure according to specifications',
-    assignedOperator: 'John Smith',
+    assignedOperator: 'Gururaja',
     machine: 'CAT 336F Excavator',
     status: 'in-progress',
     priority: 'high',
@@ -87,8 +87,8 @@ const demoTasks = [
       progress: 75,
       status: 'in-progress',
       notes: 'Making good progress on excavation',
-      updatedBy: 'John Smith',
-      user: 'John Smith',
+      updatedBy: 'Gururaja',
+      user: 'Gururaja',
       action: 'progress_update'
     }],
     timeSpent: 360,
@@ -99,7 +99,7 @@ const demoTasks = [
     id: 2,
     title: 'Level Ground Zone B',
     description: 'Use bulldozer to level terrain for construction preparation',
-    assignedOperator: 'Sarah Johnson',
+    assignedOperator: 'Akash',
     machine: 'CAT D6T Bulldozer',
     status: 'pending',
     priority: 'medium',
@@ -118,7 +118,7 @@ const demoTasks = [
     id: 3,
     title: 'Transport Materials to Zone C',
     description: 'Move construction materials from storage to construction area',
-    assignedOperator: 'John Smith',
+    assignedOperator: 'Gururaja',
     machine: 'CAT 950M Loader',
     status: 'pending',
     priority: 'high',
@@ -137,7 +137,7 @@ const demoTasks = [
     id: 4,
     title: 'Equipment Safety Inspection',
     description: 'Perform routine safety check on loader equipment',
-    assignedOperator: 'John Smith',
+    assignedOperator: 'Gururaja',
     machine: 'CAT 950M Loader',
     status: 'pending',
     priority: 'medium',
@@ -156,7 +156,7 @@ const demoTasks = [
     id: 5,
     title: 'Clean Equipment Storage',
     description: 'Organize and clean equipment storage area',
-    assignedOperator: 'Sarah Johnson',
+    assignedOperator: 'Akash',
     machine: 'None',
     status: 'pending',
     priority: 'low',
@@ -179,7 +179,7 @@ const demoMachines = [
     type: 'excavator',
     serialNumber: 'CAT336F-2024-001',
     status: 'active',
-    operator: 'John Smith',
+    operator: 'Gururaja',
     fuelLevel: 85,
     hoursOperated: 1250,
     location: 'Construction Zone A',
@@ -194,7 +194,7 @@ const demoMachines = [
     type: 'bulldozer',
     serialNumber: 'CATD6T-2024-002',
     status: 'active',
-    operator: 'Sarah Johnson',
+    operator: 'Akash',
     fuelLevel: 72,
     hoursOperated: 980,
     location: 'Construction Zone B',
@@ -209,7 +209,7 @@ const demoMachines = [
     type: 'loader',
     serialNumber: 'CAT950M-2024-003',
     status: 'idle',
-    operator: 'Mike Wilson',
+    operator: 'Santhosh',
     fuelLevel: 95,
     hoursOperated: 756,
     location: 'Parking Area',
@@ -259,20 +259,20 @@ localStorage.setItem('currentUser', JSON.stringify({
   role: 'admin'
 }));
 
-console.log("✅ Demo data loaded successfully!");
-console.log("👥 Operators:", demoOperators.length);
+console.log(" Demo data loaded successfully!");
+console.log(" Operators:", demoOperators.length);
 console.log("📋 Tasks:", demoTasks.length);
 console.log("🚜 Machines:", demoMachines.length);
-console.log("📍 Locations:", siteLocations.length);
+console.log(" Locations:", siteLocations.length);
 console.log("");
 console.log("🎬 Demo Ready! Refresh the page and navigate to Machines page");
 console.log("");
 console.log("🎯 Demo Highlights:");
-console.log("• John Smith has 3 tasks at varying distances (25m, 67m, 245m)");
-console.log("• Mike Wilson is on 'break' - won't move during simulation");
-console.log("• Sarah Johnson has active tasks in Construction Zone B");
+console.log("• Gururaja has 3 tasks at varying distances (25m, 67m, 245m)");
+console.log("• Santhosh is on 'break' - won't move during simulation");
+console.log("• Akash has active tasks in Construction Zone B");
 console.log("• All machines have realistic fuel levels and status");
-console.log("• Lisa Chen (supervisor) has no assigned tasks - shows edge case");
+console.log("• Aananthi (supervisor) has no assigned tasks - shows edge case");
 console.log("");
 console.log("🚀 Perfect for demonstrating proximity-based task prioritization!");
 
@@ -281,7 +281,7 @@ window.demoHelpers = {
   // Quick function to move John to different zones for demo
   moveJohnTo: (location) => {
     const operators = JSON.parse(localStorage.getItem('operators'));
-    const johnIndex = operators.findIndex(op => op.name === 'John Smith');
+    const johnIndex = operators.findIndex(op => op.name === 'Gururaja');
     if (johnIndex !== -1) {
       const locations = {
         'north': { x: 105, y: 195, zone: 'north' },
@@ -302,9 +302,9 @@ window.demoHelpers = {
   showTaskDistances: () => {
     const operators = JSON.parse(localStorage.getItem('operators'));
     const tasks = JSON.parse(localStorage.getItem('tasks'));
-    const john = operators.find(op => op.name === 'John Smith');
+    const john = operators.find(op => op.name === 'Gururaja');
     if (john) {
-      const johnTasks = tasks.filter(t => t.assignedOperator === 'John Smith');
+      const johnTasks = tasks.filter(t => t.assignedOperator === 'Gururaja');
       johnTasks.forEach(task => {
         const distance = Math.sqrt(
           Math.pow(john.currentLocation.x - task.locationCoordinates.x, 2) +

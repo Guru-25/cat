@@ -28,15 +28,15 @@
 ## 🎬 **5 Minutes Before Demo**
 
 ### **Final Verification**
-- [ ] Select "John Smith" - verify tasks appear
+- [ ] Select "Gururaja" - verify tasks appear
 - [ ] Click "Distances" - verify lines show
 - [ ] Test "Quick Move" to different location
 - [ ] Click "Start Sim" briefly to test
 - [ ] Verify machine status panel loads
 
 ### **Edge Case Prep**
-- [ ] Select "Lisa Chen" to show "no tasks" case
-- [ ] Verify "Mike Wilson" shows "break" status
+- [ ] Select "Aananthi" to show "no tasks" case
+- [ ] Verify "Santhosh" shows "break" status
 - [ ] Check that coordinates display properly
 
 ---
@@ -61,7 +61,7 @@
 
 ---
 
-## 🚨 **Backup Plans**
+##  **Backup Plans**
 
 ### **If Browser Crashes**
 - [ ] Have second browser window ready
@@ -118,19 +118,19 @@
 ## 🎉 **Confidence Boosters**
 
 ### **What You've Built**
-✅ **Real-time location tracking system**
-✅ **Smart proximity-based task prioritization**  
-✅ **Interactive visual map interface**
-✅ **Automated movement simulation**
-✅ **Comprehensive error handling**
-✅ **Production-ready code architecture**
+ **Real-time location tracking system**
+ **Smart proximity-based task prioritization**  
+ **Interactive visual map interface**
+ **Automated movement simulation**
+ **Comprehensive error handling**
+ **Production-ready code architecture**
 
 ### **Business Impact**
-✅ **Immediate productivity gains**
-✅ **Enhanced safety compliance**
-✅ **Reduced operational costs**
-✅ **Foundation for advanced AI features**
-✅ **Scalable to hundreds of operators**
+ **Immediate productivity gains**
+ **Enhanced safety compliance**
+ **Reduced operational costs**
+ **Foundation for advanced AI features**
+ **Scalable to hundreds of operators**
 
 ---
 

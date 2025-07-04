@@ -250,7 +250,7 @@ const SafetyAlerts: React.FC = () => {
       playAlarmSound(highestSeverityAlert.severity, highestSeverityAlert.type);
       
       // Log the alert trigger
-      console.log(`🚨 NEW SAFETY ALERT: ${highestSeverityAlert.severity} - ${highestSeverityAlert.message}`);
+      console.log(` NEW SAFETY ALERT: ${highestSeverityAlert.severity} - ${highestSeverityAlert.message}`);
     }
 
     // Log resolved conditions
@@ -258,7 +258,7 @@ const SafetyAlerts: React.FC = () => {
       condition => !currentConditions.has(condition)
     );
     if (resolvedConditions.length > 0) {
-      console.log(`✅ SAFETY ALERT RESOLVED: ${resolvedConditions.length} condition(s) cleared`);
+      console.log(` SAFETY ALERT RESOLVED: ${resolvedConditions.length} condition(s) cleared`);
     }
 
     // Update alerts display (keep recent alerts for reference)
@@ -311,12 +311,12 @@ const SafetyAlerts: React.FC = () => {
         responseTime: '< 5 seconds'
       };
       
-      window.alert(`🚨 EMERGENCY RESPONSE ACTIVATED:
+      window.alert(` EMERGENCY RESPONSE ACTIVATED:
       
-✅ ${alert.machine} STOPPED immediately
-✅ Safety alert cleared
-✅ Emergency response logged
-✅ ${alert.operator} notified to evacuate area
+ ${alert.machine} STOPPED immediately
+ Safety alert cleared
+ Emergency response logged
+ ${alert.operator} notified to evacuate area
 
 Response Time: < 5 seconds
 Next: Safety officer dispatched to coordinates (${alert.coordinates.x}, ${alert.coordinates.y})`);
@@ -328,12 +328,12 @@ Next: Safety officer dispatched to coordinates (${alert.coordinates.x}, ${alert.
       window.location.reload();
     } else if (alert.type === 'hazard_zone') {
       // Simulate hazard zone evacuation
-      window.alert(`🚨 HAZARD ZONE EVACUATION PROTOCOL:
+      window.alert(` HAZARD ZONE EVACUATION PROTOCOL:
 
-✅ All personnel evacuating hazard zone
-✅ Safety barriers activated  
-✅ Emergency team dispatched
-✅ ${alert.operator} guided to nearest exit
+ All personnel evacuating hazard zone
+ Safety barriers activated  
+ Emergency team dispatched
+ ${alert.operator} guided to nearest exit
 
 Evacuation Route: → Safety Station (200, 100)
 Estimated evacuation time: 3 minutes`);
@@ -356,7 +356,7 @@ Estimated evacuation time: 3 minutes`);
       );
       localStorage.setItem('operators', JSON.stringify(updatedOperators));
       
-      window.alert(`✅ SAFETY PROTOCOL EXECUTED:
+      window.alert(` SAFETY PROTOCOL EXECUTED:
 
 ${alert.operator} moved to Safety Station
 Distance from hazard: SAFE
@@ -384,21 +384,21 @@ Alert automatically cleared.`);
 
   const getSeverityIcon = (severity: string) => {
     switch (severity) {
-      case 'CRITICAL': return '🚨';
-      case 'HIGH': return '⚠️';
-      case 'MEDIUM': return '⚡';
-      case 'LOW': return 'ℹ️';
-      default: return '📢';
+      case 'CRITICAL': return '';
+      case 'HIGH': return '';
+      case 'MEDIUM': return '';
+      case 'LOW': return 'ℹ';
+      default: return '';
     }
   };
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'proximity': return '👥';
+      case 'proximity': return '';
       case 'hazard_zone': return '☢️';
       case 'emergency': return '🆘';
       case 'fatigue': return '😴';
-      default: return '🛡️';
+      default: return '';
     }
   };
 
@@ -406,11 +406,11 @@ Alert automatically cleared.`);
     <div className="bg-white rounded-lg shadow-lg p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-gray-800">
-          🛡️ Real-Time Safety Monitoring
+          Real-Time Safety Monitoring
         </h3>
         <div className="flex items-center space-x-3">
           <span className={`text-sm ${monitoringActive ? 'text-green-600' : 'text-gray-500'}`}>
-            {monitoringActive ? '🟢 Monitoring Active' : '🔴 Monitoring Off'}
+            {monitoringActive ? 'Monitoring Active' : 'Monitoring Off'}
           </span>
           
           {/* Audio Control */}
@@ -466,10 +466,10 @@ Alert automatically cleared.`);
           <div>
             <div className="font-medium">Machine Safety Radii:</div>
             <ul className="text-gray-600 ml-2">
-              <li>🚜 Excavator: {SAFETY_ZONES.excavator}m</li>
-              <li>🚜 Bulldozer: {SAFETY_ZONES.bulldozer}m</li>
-              <li>🚛 Truck: {SAFETY_ZONES.truck}m</li>
-              <li>🚜 Loader: {SAFETY_ZONES.loader}m</li>
+              <li>Excavator: {SAFETY_ZONES.excavator}m</li>
+              <li>Bulldozer: {SAFETY_ZONES.bulldozer}m</li>
+              <li>Truck: {SAFETY_ZONES.truck}m</li>
+              <li>Loader: {SAFETY_ZONES.loader}m</li>
             </ul>
           </div>
           <div>
@@ -489,8 +489,8 @@ Alert automatically cleared.`);
            <div className="mt-2 pt-2 border-t border-gray-200">
              <div className="flex items-center justify-between">
                <div className="text-xs text-gray-600">
-                 <span className="font-medium">🔊 Audio Alert Patterns:</span>
-                 <span className="ml-2">🚨 Critical: 3x alarms | ⚠️ High: 2x alarms | ⚡ Medium/Low: 1x alarm</span>
+                 <span className="font-medium">Audio Alert Patterns:</span>
+                 <span className="ml-2">Critical: 3x alarms | High: 2x alarms | Medium/Low: 1x alarm</span>
                </div>
                <button
                  onClick={() => playAlarmSound('HIGH', 'test')}
@@ -509,12 +509,12 @@ Alert automatically cleared.`);
           <div className="text-center py-8 text-gray-500">
             {monitoringActive ? (
               <div>
-                <div className="text-2xl mb-2">✅</div>
+                <div className="text-2xl mb-2"></div>
                 <div>No safety alerts - All operators in safe zones</div>
               </div>
             ) : (
               <div>
-                <div className="text-2xl mb-2">🛡️</div>
+                <div className="text-2xl mb-2"></div>
                 <div>Start monitoring to track safety alerts</div>
                 <div className="text-xs mt-1">System will check proximity to machines and hazard zones</div>
               </div>
@@ -546,7 +546,7 @@ Alert automatically cleared.`);
                     {alert.message}
                   </div>
                   <div className="text-xs text-gray-600 mb-2">
-                    📍 Coordinates: ({alert.coordinates.x}, {alert.coordinates.y})
+                     Coordinates: ({alert.coordinates.x}, {alert.coordinates.y})
                     {alert.distance && alert.safetyRadius && (
                       <span className="ml-2">
                         | Distance: {alert.distance}m (Safe: {alert.safetyRadius}m)
@@ -561,7 +561,7 @@ Alert automatically cleared.`);
                         onClick={() => handleEmergencyResponse(alert)}
                         className="text-xs px-2 py-1 bg-red-600 text-white rounded hover:bg-red-700 font-medium"
                       >
-                        🚨 EMERGENCY STOP
+                         EMERGENCY STOP
                       </button>
                     )}
                     <button
@@ -574,7 +574,7 @@ Alert automatically cleared.`);
                       onClick={() => dismissAlert(alert.id)}
                       className="text-xs px-2 py-1 bg-gray-600 text-white rounded hover:bg-gray-700"
                     >
-                      ✅ Acknowledge
+                       Acknowledge
                     </button>
                   </div>
                 </div>

@@ -78,7 +78,7 @@ const LocationMap: React.FC<LocationMapProps> = ({
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
       <div className="mb-4">
-        <h3 className="text-lg font-semibold text-gray-800 mb-2">📍 Site Location Map</h3>
+        <h3 className="text-lg font-semibold text-gray-800 mb-2"> Site Location Map</h3>
         <div className="text-sm text-gray-600">
           Real-time positions of operators, machines, and work locations
         </div>

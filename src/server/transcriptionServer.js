@@ -71,7 +71,7 @@ app.post('/api/transcribe-video', async (req, res) => {
     // Start transcription process
     const result = await transcribeVideo(videoPath);
     
-    console.log('✅ Transcription completed successfully');
+    console.log(' Transcription completed successfully');
     
     // Return successful result
     res.json({
@@ -148,7 +148,7 @@ app.post('/api/chat', async (req, res) => {
     // Send message to Gemini AI
     const result = await chatWithVideo(transcribedText, userMessage, chatHistory || []);
     
-    console.log('✅ Chat response generated successfully');
+    console.log(' Chat response generated successfully');
     
     // Return successful result
     res.json({
@@ -195,9 +195,9 @@ const startServer = () => {
     // Check dependencies on startup
     const deps = checkDependencies();
     if (deps.ready) {
-      console.log('✅ All dependencies ready');
+      console.log(' All dependencies ready');
     } else {
-      console.log('⚠️ Some dependencies missing:');
+      console.log(' Some dependencies missing:');
       deps.issues.forEach(issue => console.log(`  - ${issue}`));
     }
   });

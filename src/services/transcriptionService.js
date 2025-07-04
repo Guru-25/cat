@@ -37,7 +37,7 @@ export const convertVideoToAudio = (videoPath, outputPath) => {
         console.log(`⏳ Processing: ${Math.round(progress.percent || 0)}% done`);
       })
       .on('end', () => {
-        console.log('✅ Video to audio conversion completed');
+        console.log(' Video to audio conversion completed');
         resolve(outputPath);
       })
       .on('error', (err) => {
@@ -76,7 +76,7 @@ export const transcribeAudioToText = async (audioPath) => {
       temperature: 0.0, // Lower temperature for more consistent results
     });
 
-    console.log('✅ Transcription completed');
+    console.log(' Transcription completed');
     console.log(`📝 Text length: ${transcription.text.length} characters`);
 
     return {
@@ -121,7 +121,7 @@ export const transcribeVideo = async (videoPath) => {
       console.log('🗑️ Temporary audio file deleted');
     }
     
-    console.log('\n✅ Video transcription pipeline completed successfully!');
+    console.log('\n Video transcription pipeline completed successfully!');
     return {
       ...transcriptionResult,
       videoPath,

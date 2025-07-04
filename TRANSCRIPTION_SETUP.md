@@ -78,7 +78,7 @@ You should see:
 ```
 🚀 Transcription server running on http://localhost:5000
 📁 Serving static files from: /path/to/your/project/public
-✅ All dependencies ready
+ All dependencies ready
 ```
 
 ### 2. Start the Frontend
@@ -95,7 +95,7 @@ npm run dev
 
 ## Current Implementation Status
 
-✅ **Completed:**
+ **Completed:**
 - Video to Audio conversion (FFmpeg)
 - Audio to Text transcription (Groq Whisper)
 - Basic Express server
@@ -150,7 +150,7 @@ Visit: http://localhost:5000/api/video-info/training-video.mp4
 The server provides detailed console logs with emojis for easy debugging:
 - 🎬 Video processing
 - 🎤 Audio transcription
-- ✅ Success messages
+-  Success messages
 - ❌ Error messages
 
 ## Common Issues

@@ -25,7 +25,7 @@ alwaysApply: true
 - **Code Examples:**
   - Use language-specific code blocks
   ```typescript
-  // ✅ DO: Show good examples
+  //  DO: Show good examples
   const goodExample = true;
   
   // ❌ DON'T: Show anti-patterns

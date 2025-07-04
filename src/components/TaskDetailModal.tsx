@@ -143,7 +143,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
 
           {/* Progress Update Section */}
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h3 className="font-semibold text-blue-900 mb-3">📊 Update Progress</h3>
+            <h3 className="font-semibold text-blue-900 mb-3">Update Progress</h3>
             
             <div className="space-y-4">
               <div>
@@ -192,7 +192,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
 
           {/* Status Update Section */}
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-            <h3 className="font-semibold text-yellow-900 mb-3">🔄 Quick Status Update</h3>
+            <h3 className="font-semibold text-yellow-900 mb-3">Quick Status Update</h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
               {task.status === 'pending' && (
@@ -236,7 +236,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
           {/* Progress History */}
           {task.progressHistory && task.progressHistory.length > 0 && (
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-              <h3 className="font-semibold text-gray-900 mb-3">📈 Progress History</h3>
+              <h3 className="font-semibold text-gray-900 mb-3">Progress History</h3>
               <div className="space-y-2 max-h-40 overflow-y-auto">
                 {task.progressHistory.slice().reverse().map((entry, index) => (
                   <div key={index} className="flex justify-between items-start p-3 bg-white rounded border text-sm">
@@ -259,7 +259,7 @@ const TaskDetailModal: React.FC<TaskDetailModalProps> = ({
 
           {/* Safety Guidelines */}
           <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-            <h3 className="font-semibold text-red-900 mb-2">⚠️ Safety Requirements</h3>
+            <h3 className="font-semibold text-red-900 mb-2">Safety Requirements</h3>
             <div className="text-red-800 text-sm space-y-1">
               <p>• Hard hat, safety vest, and steel-toed boots required</p>
               <p>• Ensure machine inspection is complete before operation</p>

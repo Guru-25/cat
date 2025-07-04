@@ -27,7 +27,7 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onSave, onClose }) => {
   const [isEstimating, setIsEstimating] = useState(false);
 
   // Available operators and machines
-  const availableOperators = ['John Smith', 'Sarah Johnson', 'Mike Davis', 'Lisa Wilson', 'Tom Brown'];
+  const availableOperators = ['Gururaja', 'Akash', 'Bala', 'Lisa Wilson', 'Tom Brown'];
   const availableMachines = ['CAT 320', 'CAT 330', 'CAT 349', 'CAT 950', 'CAT 980'];
 
   useEffect(() => {

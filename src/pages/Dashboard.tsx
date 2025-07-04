@@ -11,15 +11,15 @@ const Dashboard = () => {
   ];
 
   const activeTasks = [
-    { id: 1, title: 'Excavate Foundation Site A', operator: 'John Smith', machine: 'CAT 336F', progress: 75 },
-    { id: 2, title: 'Clear Debris from Road', operator: 'Sarah Johnson', machine: 'CAT D6T', progress: 45 },
-    { id: 3, title: 'Grade Construction Zone', operator: 'Mike Davis', machine: 'CAT 140M3', progress: 90 },
+    { id: 1, title: 'Excavate Foundation Site A', operator: 'Gururaja', machine: 'CAT 336F', progress: 75 },
+    { id: 2, title: 'Clear Debris from Road', operator: 'Akash', machine: 'CAT D6T', progress: 45 },
+    { id: 3, title: 'Grade Construction Zone', operator: 'Bala', machine: 'CAT 140M3', progress: 90 },
   ];
 
   const machines = [
-    { id: 1, model: 'CAT 336F Excavator', status: 'Active', operator: 'John Smith', fuel: 85 },
-    { id: 2, model: 'CAT D6T Bulldozer', status: 'Active', operator: 'Sarah Johnson', fuel: 62 },
-    { id: 3, model: 'CAT 140M3 Grader', status: 'Active', operator: 'Mike Davis', fuel: 78 },
+    { id: 1, model: 'CAT 336F Excavator', status: 'Active', operator: 'Gururaja', fuel: 85 },
+    { id: 2, model: 'CAT D6T Bulldozer', status: 'Active', operator: 'Akash', fuel: 62 },
+    { id: 3, model: 'CAT 140M3 Grader', status: 'Active', operator: 'Bala', fuel: 78 },
     { id: 4, model: 'CAT 725C Truck', status: 'Maintenance', operator: '-', fuel: 45 },
   ];
 

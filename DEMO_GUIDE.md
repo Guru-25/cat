@@ -10,11 +10,11 @@ This demonstration showcases the **Location Simulation Features** that enable re
 ## 📋 **Pre-Demo Setup Checklist**
 
 ### **Before Starting:**
-1. ✅ Ensure development server is running (`npm run dev`)
-2. ✅ Open app in browser (`http://localhost:5176`)
-3. ✅ Navigate to **"Machines"** page
-4. ✅ Click **"🔄 Reset Data"** button to load latest location schema
-5. ✅ Verify all components load without errors
+1.  Ensure development server is running (`npm run dev`)
+2.  Open app in browser (`http://localhost:5176`)
+3.  Navigate to **"Machines"** page
+4.  Click **"🔄 Reset Data"** button to load latest location schema
+5.  Verify all components load without errors
 
 ---
 
@@ -43,7 +43,7 @@ This demonstration showcases the **Location Simulation Features** that enable re
 - **Real-time entities:**
   - 🔵 Circles = Operators (colored by status)
   - ⬜ Squares = Machines (colored by status)
-  - 📍 Rectangles = Site locations
+  -  Rectangles = Site locations
 
 **Demonstrate:** Hover over different elements to show interactivity
 
@@ -57,11 +57,11 @@ This demonstration showcases the **Location Simulation Features** that enable re
    - Demonstrate that distance lines are not visible
 
 **Show Core Functionality:**
-2. **Select "John Smith" from dropdown**
-   - ✅ Operator becomes highlighted with blue ring
-   - ✅ Name appears in coordinates display (top-right)
-   - ✅ Proximity tasks panel populates instantly
-   - ✅ Tasks sorted by distance (nearest first)
+2. **Select "Gururaja" from dropdown**
+   -  Operator becomes highlighted with blue ring
+   -  Name appears in coordinates display (top-right)
+   -  Proximity tasks panel populates instantly
+   -  Tasks sorted by distance (nearest first)
 
 **Point out:**
 - Current coordinates display: `(105, 195)`
@@ -79,10 +79,10 @@ This demonstration showcases the **Location Simulation Features** that enable re
 - **Multi-factor sorting** (distance + priority)
 
 **Show Practical Example:**
-> *"John Smith is currently 75 meters from 'Excavate Foundation Site A' - his closest high-priority task. The system automatically recommends this over a medium-priority task that might be 200 meters away."*
+> *"Gururaja is currently 75 meters from 'Excavate Foundation Site A' - his closest high-priority task. The system automatically recommends this over a medium-priority task that might be 200 meters away."*
 
 **Edge Case #2: Operator with No Tasks**
-1. **Select "Lisa Chen" (supervisor)**
+1. **Select "Aananthi" (supervisor)**
    - Show graceful handling: "No tasks assigned to this operator"
    - System doesn't crash or show errors
 
@@ -92,13 +92,13 @@ This demonstration showcases the **Location Simulation Features** that enable re
 
 **Interactive Demo:**
 1. **Click "Distances" button**
-   - ✅ Blue dashed lines appear connecting operator to all locations
-   - ✅ Visual representation of proximity relationships
-   - ✅ Toggle on/off functionality works smoothly
+   -  Blue dashed lines appear connecting operator to all locations
+   -  Visual representation of proximity relationships
+   -  Toggle on/off functionality works smoothly
 
 **Click on any location:**
 - Alert shows exact distance calculation
-- Example: "Distance from John Smith to Material Storage: 67 meters"
+- Example: "Distance from Gururaja to Material Storage: 67 meters"
 
 ---
 
@@ -107,10 +107,10 @@ This demonstration showcases the **Location Simulation Features** that enable re
 **Demonstrate Control:**
 1. **Use "Quick Move to Location" dropdown**
    - Select "Construction Zone B"
-   - ✅ John Smith moves instantly to new coordinates
-   - ✅ Proximity task list updates automatically
-   - ✅ Distance calculations recalculate in real-time
-   - ✅ New coordinates display updates
+   -  Gururaja moves instantly to new coordinates
+   -  Proximity task list updates automatically
+   -  Distance calculations recalculate in real-time
+   -  New coordinates display updates
 
 **Show Practical Value:**
 > *"This simulates an operator moving to a new work area. Notice how the task priorities automatically reorder based on the new location."*
@@ -121,10 +121,10 @@ This demonstration showcases the **Location Simulation Features** that enable re
 
 **The Showcase Feature:**
 1. **Click "Start Sim" button**
-   - ✅ Simulation status indicator appears
-   - ✅ All active operators begin moving automatically
-   - ✅ Machines move more slowly and less frequently
-   - ✅ Positions update every 3 seconds
+   -  Simulation status indicator appears
+   -  All active operators begin moving automatically
+   -  Machines move more slowly and less frequently
+   -  Positions update every 3 seconds
 
 **Real-time Updates to Highlight:**
 - Operator coordinates change continuously
@@ -163,10 +163,10 @@ This demonstration showcases the **Location Simulation Features** that enable re
 
 **Reset Data Functionality:**
 1. **Click "🔄 Reset Data" button**
-   - ✅ Clears old localStorage data
-   - ✅ Loads fresh data with complete location schema
-   - ✅ Handles data migration seamlessly
-   - ✅ Success confirmation message
+   -  Clears old localStorage data
+   -  Loads fresh data with complete location schema
+   -  Handles data migration seamlessly
+   -  Success confirmation message
 
 **Edge Case #5: Data Corruption Recovery**
 - Demonstrate that reset fixes any data issues
@@ -177,22 +177,22 @@ This demonstration showcases the **Location Simulation Features** that enable re
 ## 🔧 **Technical Edge Cases Covered**
 
 ### **Data Handling:**
-- ✅ Missing location coordinates (graceful degradation)
-- ✅ Undefined operators/machines (filtered out)
-- ✅ Empty task lists (proper messaging)
-- ✅ localStorage corruption (reset functionality)
+-  Missing location coordinates (graceful degradation)
+-  Undefined operators/machines (filtered out)
+-  Empty task lists (proper messaging)
+-  localStorage corruption (reset functionality)
 
 ### **UI Responsiveness:**
-- ✅ Real-time updates without page refresh
-- ✅ Smooth animations and transitions
-- ✅ Mobile-responsive design
-- ✅ Interactive elements with hover states
+-  Real-time updates without page refresh
+-  Smooth animations and transitions
+-  Mobile-responsive design
+-  Interactive elements with hover states
 
 ### **Business Logic:**
-- ✅ Distance calculations using Euclidean formula
-- ✅ Boundary constraints (entities stay within site)
-- ✅ Status-aware movement logic
-- ✅ Multi-factor task prioritization
+-  Distance calculations using Euclidean formula
+-  Boundary constraints (entities stay within site)
+-  Status-aware movement logic
+-  Multi-factor task prioritization
 
 ---
 
@@ -252,15 +252,15 @@ This demonstration showcases the **Location Simulation Features** that enable re
 ## 🎯 **Success Metrics for Panel**
 
 ### **Technical Accomplishments:**
-- ✅ Real-time position tracking system
-- ✅ Proximity-based task prioritization algorithm
-- ✅ Interactive visual map interface
-- ✅ Automated movement simulation engine
-- ✅ Comprehensive edge case handling
+-  Real-time position tracking system
+-  Proximity-based task prioritization algorithm
+-  Interactive visual map interface
+-  Automated movement simulation engine
+-  Comprehensive edge case handling
 
 ### **Business Impact Potential:**
 - 📈 15-20% productivity improvement
-- 🛡️ Enhanced safety compliance
+-  Enhanced safety compliance
 - ⛽ Reduced fuel and maintenance costs
 - 📊 Foundation for advanced analytics
 - 🎯 Improved resource allocation

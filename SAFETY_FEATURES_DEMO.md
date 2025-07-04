@@ -1,4 +1,4 @@
-# 🛡️ Safety Enhancement Through Location Coordinates
+#  Safety Enhancement Through Location Coordinates
 
 ## **Current Foundation (Task 5) + Safety Extensions**
 
@@ -42,7 +42,7 @@ function checkSafetyProximity(operators: Operator[], machines: Machine[]) {
 ```
 
 **Demo Scenario:**
-> *"John Smith (x:105, y:195) walks within 10 meters of active CAT 336F Excavator (x:100, y:200). System immediately triggers: '⚠️ SAFETY ALERT: John Smith too close to excavator - 7m distance, 15m required!'"*
+> *"Gururaja (x:105, y:195) walks within 10 meters of active CAT 336F Excavator (x:100, y:200). System immediately triggers: ' SAFETY ALERT: Gururaja too close to excavator - 7m distance, 15m required!'"*
 
 ---
 
@@ -99,7 +99,7 @@ function checkHazardZones(operator: Operator) {
 ```
 
 **Demo Scenario:**
-> *"Sarah Johnson (x:78, y:148) approaches Chemical Storage (x:75, y:150). Distance: 5m. System alerts: '🚨 HAZARD ZONE: Chemical Storage requires respirator and hazmat suit. Confirm PPE compliance before proceeding.'"*
+> *"Akash (x:78, y:148) approaches Chemical Storage (x:75, y:150). Distance: 5m. System alerts: ' HAZARD ZONE: Chemical Storage requires respirator and hazmat suit. Confirm PPE compliance before proceeding.'"*
 
 ---
 
@@ -144,7 +144,7 @@ function handleEmergency(incidentLocation: Coordinates, emergencyType: string) {
 ```
 
 **Demo Scenario:**
-> *"Emergency at (x:120, y:180). System responds: 'Nearest operators: John Smith (25m away), Sarah Johnson (95m away). Nearest resource: First Aid Station (82m away). Estimated response: 16 minutes. Evacuation route calculated.'"*
+> *"Emergency at (x:120, y:180). System responds: 'Nearest operators: Gururaja (25m away), Akash (95m away). Nearest resource: First Aid Station (82m away). Estimated response: 16 minutes. Evacuation route calculated.'"*
 
 ---
 
@@ -232,7 +232,7 @@ function analyzeSafetyPatterns(operator: Operator, movementHistory: Coordinates[
 ## **🎬 Safety Demo Scenarios for Panel**
 
 ### **Scenario 1: Proximity Safety Alert**
-1. **Show John Smith near excavator** (coordinates visible)
+1. **Show Gururaja near excavator** (coordinates visible)
 2. **Demonstrate distance calculation** (25m → safe, 10m → warning, 5m → critical)
 3. **Trigger alert system** showing real-time safety monitoring
 

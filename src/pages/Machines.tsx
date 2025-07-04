@@ -85,7 +85,7 @@ const Machines: React.FC = () => {
 
   // Special demo function to move operator into safety alert range
   const triggerSafetyDemo = () => {
-    const johnOperator = operators.find(op => op.name === 'John Smith');
+    const johnOperator = operators.find(op => op.name === 'Gururaja');
     if (johnOperator) {
       // Move John very close to the excavator to trigger proximity alert
       const newLocation: Coordinates = {
@@ -95,7 +95,7 @@ const Machines: React.FC = () => {
       };
       updateOperatorLocation(johnOperator.id, newLocation);
       loadData();
-      alert('🚨 Demo: John Smith moved close to excavator - check Safety Alerts panel!');
+      alert(' Demo: Gururaja moved close to excavator - check Safety Alerts panel!');
     }
   };
 
@@ -164,7 +164,7 @@ const Machines: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">🏗️ Location & Machine Management</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Location & Machine Management</h1>
           <p className="text-gray-600">
             Real-time tracking of operator positions, machine locations, and proximity-based task prioritization with safety monitoring
           </p>
@@ -172,7 +172,7 @@ const Machines: React.FC = () => {
 
         {/* Control Panel */}
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">📍 Location Simulation Controls</h2>
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Location Simulation Controls</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
             {/* Operator Selection */}
@@ -261,7 +261,7 @@ const Machines: React.FC = () => {
                 onClick={triggerSafetyDemo}
                 className="w-full bg-red-600 text-white px-2 py-1 rounded-md hover:bg-red-700 text-xs"
               >
-                🚨 Safety Demo
+                 Safety Demo
               </button> */}
             </div>
           </div>
@@ -286,7 +286,7 @@ const Machines: React.FC = () => {
             {/* Machine Status - Enhanced */}
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-gray-800">🚜 Machine Status Overview</h3>
+                <h3 className="text-xl font-bold text-gray-800">Machine Status Overview</h3>
                 <div className="text-sm text-gray-500">
                   {machines.filter(m => m.status === 'active').length} of {machines.length} active
                 </div>
@@ -309,11 +309,11 @@ const Machines: React.FC = () => {
                     
                     <div className="space-y-2 text-sm text-gray-600">
                       <div className="flex items-center justify-between">
-                        <span>📍 Location:</span>
+                        <span>Location:</span>
                         <span className="font-medium">{machine.location}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span>⛽ Fuel Level:</span>
+                        <span>Fuel Level:</span>
                         <div className="flex items-center">
                           <div className="w-16 bg-gray-200 rounded-full h-2 mr-2">
                             <div 
@@ -329,7 +329,7 @@ const Machines: React.FC = () => {
                       </div>
                       {machine.operator && (
                         <div className="flex items-center justify-between">
-                          <span>👤 Operator:</span>
+                          <span>Operator:</span>
                           <span className="font-medium">{machine.operator}</span>
                         </div>
                       )}
@@ -349,7 +349,7 @@ const Machines: React.FC = () => {
             {selectedOperator && (
               <div className="bg-white rounded-lg shadow-lg p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-4">
-                  📋 Nearest Tasks for {selectedOperator}
+                  Nearest Tasks for {selectedOperator}
                 </h3>
                 
                 {proximityTasks.length > 0 ? (
@@ -362,7 +362,7 @@ const Machines: React.FC = () => {
                               <span className="text-2xl mr-2">#{index + 1}</span>
                               <h4 className="font-semibold text-gray-800">{task.title}</h4>
                             </div>
-                            <p className="text-sm text-gray-600 mb-2">📍 {task.location}</p>
+                            <p className="text-sm text-gray-600 mb-2"> {task.location}</p>
                             <div className="flex items-center space-x-2 mb-2">
                               <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                                 task.priority === 'high' ? 'bg-red-100 text-red-800' :
@@ -412,7 +412,7 @@ const Machines: React.FC = () => {
           {/* PRIORITY 3: Site Location Map */}
           <div className="xl:col-span-3">
             <div className="bg-white rounded-lg shadow-lg p-4">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">📍 Site Overview</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-3"> Site Overview</h3>
               <div className="h-96">
                 <LocationMap
                   selectedOperator={selectedOperator}

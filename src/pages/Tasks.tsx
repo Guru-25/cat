@@ -271,7 +271,7 @@ const Tasks = () => {
     setShowReassignDropdown(showReassignDropdown === taskId ? null : taskId);
   };
 
-  const availableOperators = ['John Smith', 'Sarah Johnson', 'Mike Davis', 'Lisa Wilson', 'Tom Brown'];
+  const availableOperators = ['Gururaja', 'Akash', 'Bala', 'Lisa Wilson', 'Tom Brown'];
 
   const getStatusBadgeClass = (status: string) => {
     const baseClasses = "status-badge";

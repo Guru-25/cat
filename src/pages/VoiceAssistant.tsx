@@ -13,7 +13,7 @@ const VoiceAssistant: React.FC = () => {
   const { transcript, listening, resetTranscript } = useSpeechRecognition();
 
   // Get current user info from localStorage
-  const userName = localStorage.getItem('userName') || 'John Smith'; // fallback for demo
+  const userName = localStorage.getItem('userName') || 'Gururaja'; // fallback for demo
   const userRole = localStorage.getItem('userRole') || 'operator';
 
   // Helper: get operator object
