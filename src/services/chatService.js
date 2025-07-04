@@ -18,15 +18,28 @@ export const chatWithVideo = async (transcribedText, userMessage, chatHistory = 
     // Get the generative model
     const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     
-    // Build context prompt with transcribed video content
-    const systemPrompt = `You are an AI assistant helping users understand a CAT equipment training video. 
+    // Build context prompt with transcribed video content - ENHANCED for multilingual support
+    const systemPrompt = `You are an AI assistant helping heavy equipment operators understand CAT equipment training and safety procedures.
 
 Video Transcription Context:
 "${transcribedText}"
 
-Please answer user questions based on this video content. If the user asks about something not covered in the video, politely let them know that the information isn't available in this particular training video.
+INSTRUCTIONS:
+1. **Language Support**: Respond in the SAME language the user asks their question in (English, Tamil, Hindi, Spanish, Arabic, etc.)
+2. **Primary Source**: Use the video transcription as your main reference when answering questions
+3. **General Knowledge**: If the user asks about CAT equipment, safety procedures, or heavy machinery that's not specifically in the video, you can provide general helpful information based on your knowledge
+4. **Safety Priority**: Always prioritize safety information and best practices
+5. **Be Helpful**: Don't restrict yourself only to the video content - be a helpful assistant for equipment operators
+6. **Cultural Context**: Be respectful of different cultural backgrounds and working environments
 
-Be helpful, accurate, and focus on safety and proper equipment operation procedures mentioned in the video.`;
+EXAMPLES:
+- If user asks in Tamil: Respond in Tamil
+- If user asks in Hindi: Respond in Hindi  
+- If user asks in English: Respond in English
+- If user asks about general CAT equipment safety: Provide helpful safety guidance
+- If user asks about specific video content: Reference the transcription
+
+Be friendly, helpful, and focused on operator safety and equipment knowledge.`;
 
     // Build conversation history
     let conversationContext = systemPrompt + '\n\n';
@@ -46,7 +59,7 @@ Be helpful, accurate, and focus on safety and proper equipment operation procedu
     const response = await result.response;
     const text = response.text();
     
-    console.log(' Gemini response received');
+    console.log('✅ Gemini response received');
     
     return {
       success: true,
