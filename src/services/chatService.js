@@ -1,8 +1,11 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Initialize Gemini client with hardcoded API key
 // Replace with your actual Gemini API key from Google AI Studio
-const genAI = new GoogleGenerativeAI('AIzaSyDrDYIc3FNa0p0oNoTR7h_Ls_UIFWoqA3U');
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 /**
  * Chat with Gemini using transcribed video context

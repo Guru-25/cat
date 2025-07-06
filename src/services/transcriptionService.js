@@ -2,10 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import ffmpeg from 'fluent-ffmpeg';
 import Groq from 'groq-sdk';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Initialize Groq client with hardcoded API key
 // Replace 'your_groq_api_key_here' with your actual Groq API key
-const groq = new Groq({ apiKey: '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' });
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 /**
  * Step 1: Convert video to audio using FFmpeg
@@ -37,7 +40,7 @@ export const convertVideoToAudio = (videoPath, outputPath) => {
         console.log(`⏳ Processing: ${Math.round(progress.percent || 0)}% done`);
       })
       .on('end', () => {
-        console.log(' Video to audio conversion completed');
+        console.log('✅ Video to audio conversion completed');
         resolve(outputPath);
       })
       .on('error', (err) => {
@@ -76,7 +79,7 @@ export const transcribeAudioToText = async (audioPath) => {
       temperature: 0.0, // Lower temperature for more consistent results
     });
 
-    console.log(' Transcription completed');
+    console.log('✅ Transcription completed');
     console.log(`📝 Text length: ${transcription.text.length} characters`);
 
     return {
@@ -104,7 +107,9 @@ export const transcribeVideo = async (videoPath) => {
     
     // Generate unique filename for audio
     const timestamp = Date.now();
-    const audioPath = path.join(process.cwd(), 'temp', `audio_${timestamp}.mp3`);
+    // Use /tmp directory for Vercel serverless functions
+    const tempDir = process.env.VERCEL ? '/tmp' : path.join(process.cwd(), 'temp');
+    const audioPath = path.join(tempDir, `audio_${timestamp}.mp3`);
     
     // Step 1: Convert video to audio
     console.log('\n📹 Step 1: Converting video to audio...');
@@ -121,7 +126,7 @@ export const transcribeVideo = async (videoPath) => {
       console.log('🗑️ Temporary audio file deleted');
     }
     
-    console.log('\n Video transcription pipeline completed successfully!');
+    console.log('\n✅ Video transcription pipeline completed successfully!');
     return {
       ...transcriptionResult,
       videoPath,
@@ -141,8 +146,9 @@ export const transcribeVideo = async (videoPath) => {
 export const checkDependencies = () => {
   const issues = [];
   
-  // Check if temp directory exists, create if not
-  const tempDir = path.join(process.cwd(), 'temp');
+  // Use /tmp directory for Vercel serverless functions
+  const tempDir = process.env.VERCEL ? '/tmp' : path.join(process.cwd(), 'temp');
+  
   if (!fs.existsSync(tempDir)) {
     try {
       fs.mkdirSync(tempDir, { recursive: true });
@@ -154,6 +160,7 @@ export const checkDependencies = () => {
   
   return {
     ready: issues.length === 0,
-    issues
+    issues,
+    tempDir
   };
 }; 
