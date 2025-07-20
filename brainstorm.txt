@@ -1,0 +1,25 @@
+Help me build an web app as i attached in the image
+this is the idea i though, apart from this if any idea better list it
+
+admin assign scheduled tasks 5-6 task, user long in to view the tasks, operator
+task have to show the estimated time through the dataset. assigning priority to the tasks, based on the location of the task and current location assign priority, shortest distance...like that, when they complete each task and have a progress bar.  performace credit score+-past behavior, logs, through incident loging
+in the tasks some tasks like needed tutorial can be ai generated like llm? through the e-learning feature
+for the proximity feature, each machines have a coordinates right? the machine is linked to the person and the person is linked to the app right? thogh that we can calculate nearby machines, like when the threashold distance they told the the proximity values and any other values can be assuemed since this is only software we are working on, 
+
+the additional features i thought is totp to ensure that only the authorized person is using the machine
+
+the operator needed data can be random generated  assumed
+
+admin login, panel,
+task - instrtuction is given by admin, shown to user - progressbar
+eg every through 1 hr it hould log - alert safety measures
+
+TASK TIME MODEL - needed inputs in the dataset and predicted output is estimated time
+Machine behavior. threshold (no ml model needed)
+
+what additional features needed in dataset table
+
+we need to display the working features in the app ui
+
+multi lingual
+voice enabled
